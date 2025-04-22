@@ -2,6 +2,10 @@
 
 using UnityEngine;
 
+//Enemyステータス　増田
+
+using UnityEngine;
+
 public class EnemyStatus : MonoBehaviour
 {
     public int maxHP = 50;

@@ -3,22 +3,28 @@ using UnityEngine;
 
 public class Effect_Hit : MonoBehaviour
 {
-    public int health = 100;
+    private EnemyStatus enemyStatus;
 
-    public void TakeDamage(int amount)
+    void Start()
     {
-        health -= amount;
-        Debug.Log($"{gameObject.name} took {amount} damage. Remaining health: {health}");
+        // 同じオブジェクトにアタッチされている EnemyStatus を取得
+        enemyStatus = GetComponent<EnemyStatus>();
 
-        if (health <= 0)
+        if (enemyStatus == null)
         {
-            Die();
+            Debug.LogWarning("EnemyStatus が見つかりませんでした。");
         }
     }
 
-    void Die()
+    public void TakeDamage(int amount)
     {
-        Debug.Log($"{gameObject.name} has died.");
-        Destroy(gameObject);
+        if (enemyStatus != null)
+        {
+            enemyStatus.TakeDamage(amount);  // EnemyStatus にダメージ処理を任せる
+        }
+        else
+        {
+            Debug.LogWarning("EnemyStatus が未設定のためダメージを処理できません。");
+        }
     }
 }
