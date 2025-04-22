@@ -1,4 +1,4 @@
-//カメラの動き
+//カメラの動き　増田
 
 using UnityEngine;
 
