@@ -1,3 +1,5 @@
+//エフェクトのダメージ判定 増田
+
 using UnityEngine;
 
 public class ParticleDamageDealer : MonoBehaviour
