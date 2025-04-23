@@ -183,3 +183,4 @@ MonoBehaviour:
   maxHP: 500
   currentHP: 0
   attackPower: 10
+  deathEffect: {fileID: 2698436514906202941, guid: 4f35829c33b13af41aee222e042ec50f, type: 3}
