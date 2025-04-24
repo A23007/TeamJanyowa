@@ -3,13 +3,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PauseOnTouchUI : MonoBehaviour
+public class ButtonSpawnManager : MonoBehaviour
 {
-    [Header("表示するキャンバス")]
-    public GameObject canvasToShow;
-
-    [Header("クリック対象のボタン（最大3つ）")]
     public Button[] clickableButtons = new Button[3];
+    public GameObject[] spawnPrefabs = new GameObject[3]; // ボタンごとに生成するPrefabを指定
+    public GameObject canvasToShow;
 
     private bool isPaused = false;
 
@@ -20,12 +18,12 @@ public class PauseOnTouchUI : MonoBehaviour
             canvasToShow.SetActive(false); // 最初は非表示
         }
 
-        // 全てのボタンにクリックリスナーを登録
-        foreach (Button btn in clickableButtons)
+        for (int i = 0; i < clickableButtons.Length; i++)
         {
-            if (btn != null)
+            int index = i; // キャプチャ対策
+            if (clickableButtons[i] != null)
             {
-                btn.onClick.AddListener(OnAnyButtonClicked);
+                clickableButtons[i].onClick.AddListener(() => OnButtonClicked(index));
             }
         }
     }
@@ -43,7 +41,7 @@ public class PauseOnTouchUI : MonoBehaviour
         }
     }
 
-    private void OnAnyButtonClicked()
+    private void OnButtonClicked(int index)
     {
         if (canvasToShow != null)
         {
@@ -52,6 +50,11 @@ public class PauseOnTouchUI : MonoBehaviour
 
         Time.timeScale = 1f; // ゲーム再開
         isPaused = false;
+
+        if (index >= 0 && index < spawnPrefabs.Length && spawnPrefabs[index] != null)
+        {
+            Instantiate(spawnPrefabs[index], transform.position, Quaternion.identity);
+        }
 
         Destroy(gameObject); // このオブジェクトを削除
     }

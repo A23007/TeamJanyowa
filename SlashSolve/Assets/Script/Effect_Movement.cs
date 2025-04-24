@@ -1,7 +1,7 @@
-//エフェクトをプレイヤーに合わせて動くようにする　増田
+// エフェクトをプレイヤーに合わせて動くようにする　増田
+
 
 using UnityEngine;
-
 
 public class Effect_Movement : MonoBehaviour
 {
@@ -10,6 +10,20 @@ public class Effect_Movement : MonoBehaviour
 
     [Tooltip("ターゲットからの相対位置（ローカル座標）")]
     public Vector3 offset = Vector3.zero;
+
+    void Start()
+    {
+        // Playerタグを持つオブジェクトを探してtargetに設定
+        GameObject playerObj = GameObject.FindWithTag("Player");
+        if (playerObj != null)
+        {
+            target = playerObj.transform;
+        }
+        else
+        {
+            Debug.LogWarning("Playerタグを持つオブジェクトが見つかりませんでした。");
+        }
+    }
 
     void Update()
     {
