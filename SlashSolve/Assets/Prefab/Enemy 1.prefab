@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveArea: {fileID: 4161605115720364493, guid: 55efafc87f80f89418e491c1938e1928, type: 3}
-  moveSpeed: 5
+  moveSpeed: 10
   stopTime: 3
   detectRange: 20
   lostTargetWaitTime: 20

@@ -3,59 +3,62 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtonSpawnManager : MonoBehaviour
+public class TresureChest : MonoBehaviour
 {
-    public Button[] clickableButtons = new Button[3];
-    public GameObject[] spawnPrefabs = new GameObject[3]; // ボタンごとに生成するPrefabを指定
-    public GameObject canvasToShow;
+    [Header("共通UI設定")]
+    public GameObject canvasToShow;            // UIキャンバス（共通）
+    public Button[] clickableButtons;          // 選択肢ボタン（共通）
+    public GameObject[] spawnPrefabs;          // 各ボタンに対応したPrefab
 
-    private bool isPaused = false;
+    private static bool isUIOpen = false;      // UIが開いているかどうか（共通管理）
+    private static TresureChest currentCaller; // 今UIを呼び出したオブジェクト
 
     private void Start()
-    {
-        if (canvasToShow != null)
-        {
-            canvasToShow.SetActive(false); // 最初は非表示
-        }
-
-        for (int i = 0; i < clickableButtons.Length; i++)
-        {
-            int index = i; // キャプチャ対策
-            if (clickableButtons[i] != null)
-            {
-                clickableButtons[i].onClick.AddListener(() => OnButtonClicked(index));
-            }
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (!isPaused && other.CompareTag("Player"))
-        {
-            if (canvasToShow != null)
-            {
-                canvasToShow.SetActive(true);
-                Time.timeScale = 0f; // ゲーム停止
-                isPaused = true;
-            }
-        }
-    }
-
-    private void OnButtonClicked(int index)
     {
         if (canvasToShow != null)
         {
             canvasToShow.SetActive(false);
         }
 
-        Time.timeScale = 1f; // ゲーム再開
-        isPaused = false;
+        for (int i = 0; i < clickableButtons.Length; i++)
+        {
+            int index = i;
+            clickableButtons[i].onClick.AddListener(() => OnButtonClicked(index));
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!isUIOpen && other.CompareTag("Player"))
+        {
+            if (canvasToShow != null)
+            {
+                currentCaller = this; // 今触れたこのオブジェクトを記録
+                canvasToShow.SetActive(true);
+                Time.timeScale = 0f;
+                isUIOpen = true;
+            }
+        }
+    }
+
+    private void OnButtonClicked(int index)
+    {
+        if (!isUIOpen) return;
+
+        if (canvasToShow != null)
+        {
+            canvasToShow.SetActive(false);
+        }
+
+        Time.timeScale = 1f;
+        isUIOpen = false;
 
         if (index >= 0 && index < spawnPrefabs.Length && spawnPrefabs[index] != null)
         {
-            Instantiate(spawnPrefabs[index], transform.position, Quaternion.identity);
+            Instantiate(spawnPrefabs[index], currentCaller.transform.position, Quaternion.identity);
         }
 
-        Destroy(gameObject); // このオブジェクトを削除
+        Destroy(currentCaller.gameObject); // UIを呼び出したオブジェクトだけを削除
+        currentCaller = null;
     }
 }

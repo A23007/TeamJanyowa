@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveArea: {fileID: 4161605115720364493, guid: 55efafc87f80f89418e491c1938e1928, type: 3}
-  moveSpeed: 5
+  moveSpeed: 10
   stopTime: 3
   detectRange: 20
   lostTargetWaitTime: 20
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a863375a1b18c843ade82fa031b5f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 100
+  maxHP: 20
   currentHP: 0
   attackPower: 10
   deathEffect: {fileID: 2698436514906202941, guid: 4f35829c33b13af41aee222e042ec50f, type: 3}
