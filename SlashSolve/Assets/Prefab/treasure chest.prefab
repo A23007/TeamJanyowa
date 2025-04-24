@@ -122,6 +122,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7053bce54982f44bbd21edfc5c963f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clickableButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  spawnPrefabs:
+  - {fileID: 8705424827142458797, guid: 27598051ba6d2b3458b2ab3e8534b0fb, type: 3}
+  - {fileID: 8705424827142458797, guid: aa0b3c38a078d4d45bbe7005ccf5ee90, type: 3}
+  - {fileID: 8705424827142458797, guid: ac60c633434bd4845acc62294bc177c7, type: 3}
+  canvasToShow: {fileID: 0}
 --- !u!54 &1699432020672622237
 Rigidbody:
   m_ObjectHideFlags: 0
