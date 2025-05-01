@@ -57,11 +57,29 @@ public class Player_Status : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            EnemyStatus enemy = collision.gameObject.GetComponent<EnemyStatus>();
-            if (enemy != null)
+            EnemyStatus enemyStatus = collision.gameObject.GetComponent<EnemyStatus>();
+            if (enemyStatus != null)
             {
-                TakeDamage(enemy.attackPower);
-                enemy.TakeDamage(attackPower);
+                TakeDamage(enemyStatus.attackPower);
+                enemyStatus.TakeDamage(attackPower);
+            }
+        }
+
+        if (collision.gameObject.CompareTag("DamageObject"))
+        {
+            object_Damage damageObject = collision.gameObject.GetComponent<object_Damage>();
+            if (damageObject != null)
+            {
+                TakeDamage(damageObject.attackPower);
+                damageObject.TakeDamage(attackPower);
+            }
+        }
+        if (collision.gameObject.CompareTag("BreakObject"))
+        {
+            BreakObject breakObject = collision.gameObject.GetComponent<BreakObject>();  // ここでBreakObjectを取得
+            if (breakObject != null)
+            {
+                breakObject.TakeDamage(attackPower); // プレイヤーの攻撃力でダメージを与える
             }
         }
     }
