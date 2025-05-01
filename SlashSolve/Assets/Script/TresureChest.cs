@@ -20,6 +20,8 @@ public class TresureChest : MonoBehaviour
             canvasToShow.SetActive(false);
         }
 
+        Time.timeScale = 1f; // シーン開始時に時間をリセット
+
         for (int i = 0; i < clickableButtons.Length; i++)
         {
             int index = i;
@@ -38,6 +40,21 @@ public class TresureChest : MonoBehaviour
                 Time.timeScale = 0f;
                 isUIOpen = true;
             }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (isUIOpen && currentCaller == this && other.CompareTag("Player"))
+        {
+            if (canvasToShow != null)
+            {
+                canvasToShow.SetActive(false);
+            }
+
+            Time.timeScale = 1f;
+            isUIOpen = false;
+            currentCaller = null;
         }
     }
 
