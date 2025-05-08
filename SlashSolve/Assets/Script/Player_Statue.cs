@@ -1,7 +1,10 @@
 //プレイヤーステータス　増田
+//HP関係
+
 
 using UnityEngine;
-using TMPro; // ← これを忘れずに
+using TMPro; // ← これはそのまま
+using UnityEngine.UI; // ← スライダーに必要
 
 public class Player_Status : MonoBehaviour
 {
@@ -9,11 +12,20 @@ public class Player_Status : MonoBehaviour
     public int currentHP;
     public int attackPower = 20;
 
-    public TextMeshProUGUI hpText; // ← UIとの接続用
+    public TextMeshProUGUI hpText; // テキスト表示用
+    public Slider hpSlider;        // ← スライダー表示用
 
     void Start()
     {
         currentHP = maxHP;
+
+        // スライダーの最大値と初期値設定
+        if (hpSlider != null)
+        {
+            hpSlider.maxValue = maxHP;
+            hpSlider.value = currentHP;
+        }
+
         UpdateHPText(); // 初期表示
     }
 
@@ -46,6 +58,11 @@ public class Player_Status : MonoBehaviour
         {
             hpText.text = $"HP: {currentHP}";
         }
+
+        if (hpSlider != null)
+        {
+            hpSlider.value = currentHP;
+        }
     }
 
     void Die()
@@ -74,12 +91,13 @@ public class Player_Status : MonoBehaviour
                 damageObject.TakeDamage(attackPower);
             }
         }
+
         if (collision.gameObject.CompareTag("BreakObject"))
         {
-            BreakObject breakObject = collision.gameObject.GetComponent<BreakObject>();  // ここでBreakObjectを取得
+            BreakObject breakObject = collision.gameObject.GetComponent<BreakObject>();
             if (breakObject != null)
             {
-                breakObject.TakeDamage(attackPower); // プレイヤーの攻撃力でダメージを与える
+                breakObject.TakeDamage(attackPower);
             }
         }
     }
