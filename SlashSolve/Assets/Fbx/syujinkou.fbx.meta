@@ -1,0 +1,231 @@
+fileFormatVersion: 2
+guid: 01d2b08463a4acc458b9765a669b94ed
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      internalID: 1827226128182048838
+      firstFrame: 0
+      lastFrame: 150
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: syujinkou(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: DoutaiShape
+      parentName: syujinkou(Clone)
+      position: {x: 0.00026587723, y: 0.006842952, z: -0.045415882}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface4
+      parentName: DoutaiShape
+      position: {x: -0.00026587723, y: -0.006842952, z: 0.045415882}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface6
+      parentName: DoutaiShape
+      position: {x: -0.00026587723, y: -0.006842952, z: 0.045415882}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface8
+      parentName: DoutaiShape
+      position: {x: -0.00026587723, y: -0.006842952, z: 0.045415882}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface9
+      parentName: DoutaiShape
+      position: {x: -0.00026587723, y: -0.006842952, z: 0.045415882}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface1
+      parentName: DoutaiShape
+      position: {x: 1.9618746e-11, y: 0.0005325957, z: 0.0000094778825}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mata
+      parentName: syujinkou(Clone)
+      position: {x: -0, y: 0.0032845943, z: -0.045438033}
+      rotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+      scale: {x: 1.000001, y: 1.000001, z: 1}
+    - name: Kosi
+      parentName: Mata
+      position: {x: -0.0025131367, y: 0, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.000001, y: 1.000001, z: 1}
+    - name: Kao
+      parentName: Kosi
+      position: {x: -0.003141421, y: 0, z: 0}
+      rotation: {x: -0.70709866, y: 0.003399461, z: 0.0033994908, w: 0.70709866}
+      scale: {x: 1.0000007, y: 1.0000005, z: 1.0000006}
+    - name: Atama
+      parentName: Kao
+      position: {x: -0.0046674698, y: 2.6020852e-20, z: 0}
+      rotation: {x: 0.49759045, y: -0.502398, z: 0.49759045, w: 0.502398}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Hhand_L
+      parentName: Kao
+      position: {x: 0.0019775336, y: -0.0043723485, z: 6.206892e-19}
+      rotation: {x: 0.57191646, y: -0.18903157, z: 0.7579121, w: 0.2504955}
+      scale: {x: 1.0000004, y: 0.99999994, z: 1.0000002}
+    - name: Hhand2_L
+      parentName: Hhand_L
+      position: {x: -0.0018312255, y: 0.000000030879015, z: 6.3184594e-19}
+      rotation: {x: -0.32086933, y: -0.6301135, z: -0.32086924, w: 0.6301134}
+      scale: {x: 0.99999994, y: 0.9999986, z: 1.0000008}
+    - name: Mhand_R
+      parentName: Kao
+      position: {x: 0.0020612432, y: 0.004333449, z: -3.4589315e-19}
+      rotation: {x: 0.95245844, y: 0.3046687, z: -0.000000014901159, w: -0.000000006519257}
+      scale: {x: 1.0000007, y: 1.0000007, z: 1.0000004}
+    - name: Mhand2_R
+      parentName: Mhand_R
+      position: {x: 0.0018312255, y: -0.000000030879015, z: -6.318497e-19}
+      rotation: {x: 0.32086924, y: 0.6301134, z: 0.32086924, w: -0.63011336}
+      scale: {x: 1, y: 0.9999986, z: 1.0000014}
+    - name: Hasi_L
+      parentName: Mata
+      position: {x: 0.0017950977, y: 0, z: 0.0020643622}
+      rotation: {x: -0.006537135, y: -0.006537135, z: 0.7070766, w: 0.7070766}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Hasi2_L
+      parentName: Hasi_L
+      position: {x: -0, y: -0.0016155879, z: -0.00008975489}
+      rotation: {x: -0, y: -0, z: 0.0000000023937898, w: 1}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: Masi_R
+      parentName: Mata
+      position: {x: 0.0017950942, y: 6.1629757e-35, z: -0.0020643673}
+      rotation: {x: 0.006537135, y: -0.006537135, z: 0.7070766, w: -0.7070766}
+      scale: {x: 1.0000014, y: 1.0000014, z: 1}
+    - name: Masi2_R
+      parentName: Masi_R
+      position: {x: -0, y: 0.001615591, z: 0.00008978603}
+      rotation: {x: -0, y: -0, z: -0.0000000023937898, w: 1}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
