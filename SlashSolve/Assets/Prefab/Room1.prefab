@@ -1239,8 +1239,8 @@ Transform:
   - {fileID: 5551871791925017335}
   - {fileID: 8631733259312097519}
   - {fileID: 2564675637116548004}
-  - {fileID: 9182356622878435567}
   - {fileID: 1444302624485166035}
+  - {fileID: 9182356622878435567}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6112253614761163126
@@ -1562,10 +1562,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8519799333851311593}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.791638, y: -35.766544, z: -9.59879}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.791638, y: 0, z: -9.59879}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4105574038084354001}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1581,14 +1581,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7eda05ce19551f49bc6c4d92ab51888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3284896167258820824, guid: 28ed197be2fd7894087b26f9a718515d, type: 3}
+  spawnables:
+  - prefab: {fileID: 2883594560889133788, guid: db70806b1bda71146b2c0ad9558ed90a, type: 3}
+    spawnProbability: 1
+    maxSpawnCount: 100
+    currentCount: 0
+  - prefab: {fileID: 2883594560889133788, guid: 18df203e2c8616645a03711f3cfcbcdf, type: 3}
+    spawnProbability: 1
+    maxSpawnCount: 100
+    currentCount: 0
+  - prefab: {fileID: 2883594560889133788, guid: 8bf934b9e46660e48bbac878bad38a9b, type: 3}
+    spawnProbability: 1
+    maxSpawnCount: 100
+    currentCount: 0
   targetObject: {fileID: 2360363321904584546}
   spawnRadius: 50
   heightOffset: 2
   spawnCountPerInterval: 3
   spawnInterval: 2
-  maxSpawnCount: 200
-  maxSimultaneousObjects: 200
+  totalMaxSpawnCount: 1000
+  maxSimultaneousObjects: 300
 --- !u!1 &9034691657657901038
 GameObject:
   m_ObjectHideFlags: 0

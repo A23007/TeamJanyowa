@@ -82,6 +82,37 @@ public class Player_Status : MonoBehaviour
             }
         }
 
+        if (collision.gameObject.CompareTag("RockObject"))
+        {
+            EnemyStatus enemyStatus = collision.gameObject.GetComponent<EnemyStatus>();
+            if (enemyStatus != null)
+            {
+                TakeDamage(enemyStatus.attackPower);
+                enemyStatus.TakeDamage(attackPower);
+            }
+        }
+
+        if (collision.gameObject.CompareTag("ScissorsObject"))
+        {
+            EnemyStatus enemyStatus = collision.gameObject.GetComponent<EnemyStatus>();
+            if (enemyStatus != null)
+            {
+                TakeDamage(enemyStatus.attackPower);
+                enemyStatus.TakeDamage(attackPower);
+            }
+        }
+
+        if (collision.gameObject.CompareTag("PaperObject"))
+        {
+            EnemyStatus enemyStatus = collision.gameObject.GetComponent<EnemyStatus>();
+            if (enemyStatus != null)
+            {
+                TakeDamage(enemyStatus.attackPower);
+                enemyStatus.TakeDamage(attackPower);
+            }
+        }
+
+
         if (collision.gameObject.CompareTag("DamageObject"))
         {
             object_Damage damageObject = collision.gameObject.GetComponent<object_Damage>();

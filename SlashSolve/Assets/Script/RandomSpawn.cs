@@ -3,10 +3,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class SpawnableObject
+{
+    public GameObject prefab;
+    [Range(0f, 1f)] public float spawnProbability = 1f; // 出現確率
+    public int maxSpawnCount = 1000;                   // 個別の最大出現数
+    [HideInInspector] public int currentCount = 0;     // 現在の生成数
+}
+
 public class RandomSpawn : MonoBehaviour
 {
-    [Header("生成するオブジェクト")]
-    public GameObject prefab;
+    [Header("生成するオブジェクト（確率・個別制限あり）")]
+    public SpawnableObject[] spawnables;
 
     [Header("生成元となる基準オブジェクト")]
     public Transform targetObject;
@@ -16,12 +25,12 @@ public class RandomSpawn : MonoBehaviour
     public float heightOffset = 2f;
 
     [Header("生成設定")]
-    public int spawnCountPerInterval = 3;      // 一回の生成数
-    public float spawnInterval = 2f;           // 生成間隔
-    public int maxSpawnCount = 1000;           // 総生成数（任意で大きめに）
+    public int spawnCountPerInterval = 3;
+    public float spawnInterval = 2f;
+    public int totalMaxSpawnCount = 1000;
 
     [Header("同時に存在できる最大数")]
-    public int maxSimultaneousObjects = 200;   // インスペクターで設定
+    public int maxSimultaneousObjects = 200;
 
     private float timer = 0f;
     private int totalSpawned = 0;
@@ -30,17 +39,13 @@ public class RandomSpawn : MonoBehaviour
 
     void Update()
     {
-        // リストからnull（破壊済みのオブジェクト）を除去
         spawnedObjects.RemoveAll(obj => obj == null);
-
         timer += Time.deltaTime;
 
         if (timer >= spawnInterval)
         {
             timer = 0f;
-
-            // 同時数制限と総数制限に引っかかっていなければ生成
-            if (spawnedObjects.Count < maxSimultaneousObjects && totalSpawned < maxSpawnCount)
+            if (spawnedObjects.Count < maxSimultaneousObjects && totalSpawned < totalMaxSpawnCount)
             {
                 SpawnObjects();
             }
@@ -49,12 +54,15 @@ public class RandomSpawn : MonoBehaviour
 
     void SpawnObjects()
     {
-        int remainingToSpawn = maxSpawnCount - totalSpawned;
+        int remainingToSpawn = totalMaxSpawnCount - totalSpawned;
         int availableSlots = maxSimultaneousObjects - spawnedObjects.Count;
         int spawnThisTime = Mathf.Min(spawnCountPerInterval, remainingToSpawn, availableSlots);
 
         for (int i = 0; i < spawnThisTime; i++)
         {
+            SpawnableObject selected = ChooseRandomSpawnable();
+            if (selected == null) break;
+
             Vector2 randomOffset = Random.insideUnitCircle * spawnRadius;
             Vector3 spawnPos = new Vector3(
                 targetObject.position.x + randomOffset.x,
@@ -62,10 +70,29 @@ public class RandomSpawn : MonoBehaviour
                 targetObject.position.z + randomOffset.y
             );
 
-            GameObject obj = Instantiate(prefab, spawnPos, Quaternion.identity);
+            GameObject obj = Instantiate(selected.prefab, spawnPos, Quaternion.identity);
             spawnedObjects.Add(obj);
+
+            selected.currentCount++;
             totalSpawned++;
         }
+    }
+
+    SpawnableObject ChooseRandomSpawnable()
+    {
+        List<SpawnableObject> validCandidates = new List<SpawnableObject>();
+
+        foreach (var s in spawnables)
+        {
+            if (s.currentCount < s.maxSpawnCount && Random.value < s.spawnProbability)
+            {
+                validCandidates.Add(s);
+            }
+        }
+
+        if (validCandidates.Count == 0) return null;
+
+        return validCandidates[Random.Range(0, validCandidates.Count)];
     }
 }
 

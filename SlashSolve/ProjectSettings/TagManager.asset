@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - DamageObject
   - BreakObject
+  - RockObject
+  - ScissorsObject
+  - PaperObject
   layers:
   - Default
   - TransparentFX
