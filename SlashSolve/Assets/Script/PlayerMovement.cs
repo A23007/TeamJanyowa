@@ -4,55 +4,47 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;  // 移動速度
-    public float bounceForce = 0f;  // 衝突時の跳ね返りの力
+    public float moveSpeed = 5f;        // プレイヤーの移動速度
+    public float stopDistance = 0.1f;   // 十分近づいたら停止するためのしきい値
 
-    private Rigidbody rb;  // Rigidbodyをキャッシュ
+    private Rigidbody rb;
 
     void Start()
     {
-        // Rigidbodyコンポーネントを取得
         rb = GetComponent<Rigidbody>();
         if (rb == null)
         {
-            // Rigidbodyがない場合は追加
             rb = gameObject.AddComponent<Rigidbody>();
         }
+
+        rb.useGravity = false;  // 必要に応じて重力無効化
+        rb.constraints = RigidbodyConstraints.FreezeRotation;  // 回転を固定
     }
 
     void Update()
     {
-        // 入力をチェックして移動方向を決定
-        float horizontal = 0f;  // 左右移動 (A、D)
-        float vertical = 0f;    // 前後移動 (W、S)
+        // マウスカーソルからRayを飛ばす
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
 
-        // Aキーで左に移動
-        if (Input.GetKey(KeyCode.A))
+        // 地面などのColliderにRayが当たった場合
+        if (Physics.Raycast(ray, out hit))
         {
-            horizontal = -1f;
-        }
-        // Dキーで右に移動
-        if (Input.GetKey(KeyCode.D))
-        {
-            horizontal = 1f;
-        }
-        // Wキーで前に移動
-        if (Input.GetKey(KeyCode.W))
-        {
-            vertical = 1f;
-        }
-        // Sキーで後ろに移動
-        if (Input.GetKey(KeyCode.S))
-        {
-            vertical = -1f;
-        }
+            Vector3 targetPosition = hit.point;
+            Vector3 direction = (targetPosition - transform.position);
+            direction.y = 0f; // 高さ方向の移動を無視
 
-        // 移動ベクトルを作成
-        Vector3 moveDirection = new Vector3(horizontal, 0f, vertical);
+            if (direction.magnitude > stopDistance)
+            {
+                Vector3 move = direction.normalized * moveSpeed * Time.deltaTime;
+                transform.position += move;
 
-        // 移動処理
-        transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
+                // プレイヤーをマウス方向に向ける（任意）
+                if (move != Vector3.zero)
+                {
+                    transform.rotation = Quaternion.LookRotation(move);
+                }
+            }
+        }
     }
-
-
 }
