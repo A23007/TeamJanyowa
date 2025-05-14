@@ -45,7 +45,9 @@ public class RandomSpawn : MonoBehaviour
         if (timer >= spawnInterval)
         {
             timer = 0f;
-            if (spawnedObjects.Count < maxSimultaneousObjects && totalSpawned < totalMaxSpawnCount)
+            if (spawnedObjects.Count < maxSimultaneousObjects &&
+                totalSpawned < totalMaxSpawnCount &&
+                IsPlayerInOwnRange()) // 自分の範囲のみチェック
             {
                 SpawnObjects();
             }
@@ -94,6 +96,33 @@ public class RandomSpawn : MonoBehaviour
 
         return validCandidates[Random.Range(0, validCandidates.Count)];
     }
+
+    // 自分の範囲にPlayerがいるかだけをチェック
+    bool IsPlayerInOwnRange()
+    {
+        Collider[] hits = Physics.OverlapSphere(targetObject.position + Vector3.up * heightOffset, spawnRadius);
+        foreach (var hit in hits)
+        {
+            if (hit.CompareTag("Player"))
+            {
+                // プレイヤーとの距離も念のためチェック（より厳密に）
+                float dist = Vector3.Distance(hit.transform.position, targetObject.position + Vector3.up * heightOffset);
+                if (dist <= spawnRadius)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    // デバッグ用：生成範囲をSceneビューで表示
+    void OnDrawGizmosSelected()
+    {
+        if (targetObject != null)
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(targetObject.position + Vector3.up * heightOffset, spawnRadius);
+        }
+    }
 }
-
-
