@@ -72,27 +72,39 @@ public class CameraMovement : MonoBehaviour
 
         foreach (RaycastHit hit in hits)
         {
-            Renderer rend = hit.collider.GetComponent<Renderer>();
-            if (rend != null && !currentlyTransparent.Contains(rend))
+            GameObject hitObj = hit.collider.gameObject;
+
+            // タグが "Untagged" のオブジェクトのみ透明化
+            if (hitObj.tag == "Untagged")
             {
-                originalMaterials[rend] = rend.materials;
-
-                Material[] transparentMats = new Material[rend.materials.Length];
-                for (int i = 0; i < rend.materials.Length; i++)
+                Renderer rend = hitObj.GetComponent<Renderer>();
+                if (rend != null && !currentlyTransparent.Contains(rend))
                 {
-                    transparentMats[i] = CreateTransparentMaterial(rend.materials[i]);
-                }
+                    originalMaterials[rend] = rend.materials;
 
-                rend.materials = transparentMats;
-                currentlyTransparent.Add(rend);
+                    Material[] transparentMats = new Material[rend.materials.Length];
+                    for (int i = 0; i < rend.materials.Length; i++)
+                    {
+                        transparentMats[i] = CreateTransparentMaterial(rend.materials[i]);
+                    }
+
+                    rend.materials = transparentMats;
+                    currentlyTransparent.Add(rend);
+
+                    // デバッグ用：透明化されたオブジェクト名をログに出力
+                    Debug.Log("Transparent applied to: " + rend.name);
+                }
             }
         }
     }
 
     Material CreateTransparentMaterial(Material baseMat)
     {
+        // Standard Shader を明示的に指定
         Material newMat = new Material(baseMat);
-        newMat.SetFloat("_Mode", 2); // Transparent
+        newMat.shader = Shader.Find("Standard");
+
+        newMat.SetFloat("_Mode", 3); // 3 = Transparent
         newMat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
         newMat.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
         newMat.SetInt("_ZWrite", 0);
@@ -102,10 +114,9 @@ public class CameraMovement : MonoBehaviour
         newMat.renderQueue = 3000;
 
         Color c = newMat.color;
-        c.a = 0.3f;
+        c.a = 0.3f; // 透明度を設定
         newMat.color = c;
 
         return newMat;
     }
 }
-
