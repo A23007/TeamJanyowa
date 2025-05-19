@@ -1,10 +1,11 @@
-//プレイヤーステータス　増田
+//プレイヤーステータス＆「ゲームオーバー処理　増田
 //HP関係
 
 
 using UnityEngine;
 using TMPro; // ← これはそのまま
 using UnityEngine.UI; // ← スライダーに必要
+using UnityEngine.SceneManagement; // ← シーン遷移に必要
 
 public class Player_Status : MonoBehaviour
 {
@@ -19,7 +20,6 @@ public class Player_Status : MonoBehaviour
     {
         currentHP = maxHP;
 
-        // スライダーの最大値と初期値設定
         if (hpSlider != null)
         {
             hpSlider.maxValue = maxHP;
@@ -68,6 +68,7 @@ public class Player_Status : MonoBehaviour
     void Die()
     {
         Debug.Log("プレイヤーが倒れた！");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GameOverScene"); // ← 遷移先のシーン名に合わせて変更
     }
 
     void OnCollisionEnter(Collision collision)
@@ -82,7 +83,9 @@ public class Player_Status : MonoBehaviour
             }
         }
 
-        if (collision.gameObject.CompareTag("RockObject"))
+        if (collision.gameObject.CompareTag("RockObject") ||
+            collision.gameObject.CompareTag("ScissorsObject") ||
+            collision.gameObject.CompareTag("PaperObject"))
         {
             EnemyStatus enemyStatus = collision.gameObject.GetComponent<EnemyStatus>();
             if (enemyStatus != null)
@@ -91,27 +94,6 @@ public class Player_Status : MonoBehaviour
                 enemyStatus.TakeDamage(attackPower);
             }
         }
-
-        if (collision.gameObject.CompareTag("ScissorsObject"))
-        {
-            EnemyStatus enemyStatus = collision.gameObject.GetComponent<EnemyStatus>();
-            if (enemyStatus != null)
-            {
-                TakeDamage(enemyStatus.attackPower);
-                enemyStatus.TakeDamage(attackPower);
-            }
-        }
-
-        if (collision.gameObject.CompareTag("PaperObject"))
-        {
-            EnemyStatus enemyStatus = collision.gameObject.GetComponent<EnemyStatus>();
-            if (enemyStatus != null)
-            {
-                TakeDamage(enemyStatus.attackPower);
-                enemyStatus.TakeDamage(attackPower);
-            }
-        }
-
 
         if (collision.gameObject.CompareTag("DamageObject"))
         {
