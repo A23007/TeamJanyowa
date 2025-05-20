@@ -52,81 +52,241 @@ PrefabInstance:
       propertyPath: m_Range
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -8028007524881073740, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: -8028007524881073740, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -7915593818658226404, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7915593818658226404, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: -7915593818658226404, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7793699675898403836, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -7793699675898403836, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: -7793699675898403836, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -7508914368249335097, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7508914368249335097, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: -7508914368249335097, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7467852857029272429, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -7467852857029272429, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: -7467852857029272429, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -7266080153559952910, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7266080153559952910, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: -7266080153559952910, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7203349006711380475, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -7203349006711380475, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: -7203349006711380475, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -5699547989053960523, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5699547989053960523, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: -5699547989053960523, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -5543044403378285793, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -5543044403378285793, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: -5543044403378285793, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4957265648059271835, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4957265648059271835, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: -4957265648059271835, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4921510526456592837, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -4921510526456592837, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: -4921510526456592837, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4244100705513621800, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4244100705513621800, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: -4244100705513621800, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4094776745488713927, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -4094776745488713927, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: -4094776745488713927, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -3427377734388446065, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3427377734388446065, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: -3427377734388446065, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -3300856095929851390, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -3300856095929851390, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: -3300856095929851390, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -2922609913835263136, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2922609913835263136, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: -2922609913835263136, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -2840282189473278453, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -2840282189473278453, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: -2840282189473278453, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -2487449582975086338, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2487449582975086338, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: -2487449582975086338, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -1824493541982477199, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -1824493541982477199, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: -1824493541982477199, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -515315623011026892, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -515315623011026892, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: -515315623011026892, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -467107993442921418, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -144,9 +304,25 @@ PrefabInstance:
       propertyPath: m_Range
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -405201243082009843, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: -405201243082009843, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 635548941070079558, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 635548941070079558, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: 635548941070079558, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Name
@@ -156,65 +332,193 @@ PrefabInstance:
       propertyPath: m_Range
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1079703694780822315, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079703694780822315, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1947518609482193371, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947518609482193371, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947518609482193371, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2031698364766325159, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2031698364766325159, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2031698364766325159, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2947191437905528098, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2947191437905528098, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2947191437905528098, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3632740176935334319, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3632740176935334319, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632740176935334319, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4204125647392353589, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204125647392353589, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204125647392353589, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4291706941854929211, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4291706941854929211, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291706941854929211, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5806422426971100572, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5806422426971100572, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5806422426971100572, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6034017273137899087, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6034017273137899087, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6034017273137899087, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6070325669997842427, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6070325669997842427, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6070325669997842427, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6141671486551748072, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6141671486551748072, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6141671486551748072, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6799341869910184529, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799341869910184529, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799341869910184529, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6967978562529223108, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6967978562529223108, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6967978562529223108, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7112951524357551695, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7112951524357551695, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: 7112951524357551695, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7276226697784850475, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7276226697784850475, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: 7276226697784850475, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7712358196921078788, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712358196921078788, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712358196921078788, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -53,7 +53,7 @@ public class CameraMovement : MonoBehaviour
 
     void HandleObstruction()
     {
-        // 元に戻す
+        // 透明化解除（元に戻す）
         foreach (var renderer in currentlyTransparent)
         {
             if (renderer != null && originalMaterials.ContainsKey(renderer))
@@ -91,7 +91,6 @@ public class CameraMovement : MonoBehaviour
                     rend.materials = transparentMats;
                     currentlyTransparent.Add(rend);
 
-                    // デバッグ用：透明化されたオブジェクト名をログに出力
                     Debug.Log("Transparent applied to: " + rend.name);
                 }
             }
@@ -100,21 +99,32 @@ public class CameraMovement : MonoBehaviour
 
     Material CreateTransparentMaterial(Material baseMat)
     {
-        // Standard Shader を明示的に指定
         Material newMat = new Material(baseMat);
-        newMat.shader = Shader.Find("Standard");
 
-        newMat.SetFloat("_Mode", 3); // 3 = Transparent
-        newMat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
-        newMat.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+        // URP用 Litシェーダーを指定
+        newMat.shader = Shader.Find("Universal Render Pipeline/Lit");
+
+        // 透過設定
+        newMat.SetFloat("_Surface", 1); // 0=Opaque, 1=Transparent
+
+        // Blend設定（URPのLitの透過用）
+        newMat.SetFloat("_Blend", (float)UnityEngine.Rendering.BlendMode.SrcAlpha);
+        newMat.SetFloat("_SrcBlend", (float)UnityEngine.Rendering.BlendMode.SrcAlpha);
+        newMat.SetFloat("_DstBlend", (float)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+        newMat.SetFloat("_BlendOp", (float)UnityEngine.Rendering.BlendOp.Add);
+
+        // ZWrite無効（深度書き込みOFF）
         newMat.SetInt("_ZWrite", 0);
-        newMat.DisableKeyword("_ALPHATEST_ON");
-        newMat.EnableKeyword("_ALPHABLEND_ON");
-        newMat.DisableKeyword("_ALPHAPREMULTIPLY_ON");
-        newMat.renderQueue = 3000;
 
+        // 透過キーワード有効化
+        newMat.EnableKeyword("_SURFACE_TYPE_TRANSPARENT");
+
+        // レンダーキューを透過用に
+        newMat.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Transparent;
+
+        // 透明度設定
         Color c = newMat.color;
-        c.a = 0.3f; // 透明度を設定
+        c.a = 0.3f; // 透明度30%
         newMat.color = c;
 
         return newMat;
