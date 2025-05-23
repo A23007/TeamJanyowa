@@ -1,10 +1,10 @@
-//敵の基本的な動作
+//敵の基本的な動作 増田
 
 using UnityEngine;
 using System.Collections;
 
 [RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(Collider))] // Colliderの取得を追加
+[RequireComponent(typeof(Collider))]
 public class RandomMovement : MonoBehaviour
 {
     public Transform moveArea;
@@ -13,10 +13,20 @@ public class RandomMovement : MonoBehaviour
     public float detectRange = 5f;
     public float lostTargetWaitTime = 5f;
 
+    public enum FaceDirectionType
+    {
+        Forward,
+        Backward,
+        Left,
+        Right
+    }
+
+    public FaceDirectionType faceDirection = FaceDirectionType.Forward;
+
     private Transform targetCharacter;
     private Vector3 destination;
     private Rigidbody rb;
-    private Collider col; // Colliderを追加
+    private Collider col;
 
     private enum State
     {
@@ -31,7 +41,7 @@ public class RandomMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        col = GetComponent<Collider>(); // Colliderを取得
+        col = GetComponent<Collider>();
         rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionY;
 
         // 地面に着地させる
@@ -129,9 +139,30 @@ public class RandomMovement : MonoBehaviour
         targetPos.y = currentPos.y;
 
         Vector3 direction = (targetPos - currentPos).normalized;
-        Vector3 newPosition = currentPos + direction * moveSpeed * Time.deltaTime;
 
-        // Y座標を固定
+        // 向きをターゲット方向に向ける（FaceDirectionType に応じて補正）
+        if (direction != Vector3.zero)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+
+            switch (faceDirection)
+            {
+                case FaceDirectionType.Backward:
+                    targetRotation *= Quaternion.Euler(0f, 180f, 0f);
+                    break;
+                case FaceDirectionType.Left:
+                    targetRotation *= Quaternion.Euler(0f, -90f, 0f);
+                    break;
+                case FaceDirectionType.Right:
+                    targetRotation *= Quaternion.Euler(0f, 90f, 0f);
+                    break;
+                    // Forward はそのまま
+            }
+
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
+        }
+
+        Vector3 newPosition = currentPos + direction * moveSpeed * Time.deltaTime;
         newPosition.y = currentPos.y;
 
         rb.MovePosition(newPosition);
@@ -145,9 +176,7 @@ public class RandomMovement : MonoBehaviour
         float x = Random.Range(-areaSize.x / 2f, areaSize.x / 2f);
         float z = Random.Range(-areaSize.z / 2f, areaSize.z / 2f);
 
-        Vector3 point = new Vector3(areaCenter.x + x, 100f, areaCenter.z + z); // かなり高い位置でRayを飛ばす
-
-        // 地面の表面に合わせる
+        Vector3 point = new Vector3(areaCenter.x + x, 100f, areaCenter.z + z); // 高い位置で Ray を飛ばす
         point.y = GetGroundYAtPosition(point);
         return point;
     }
@@ -157,10 +186,8 @@ public class RandomMovement : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(position, Vector3.down, out hit, 100f))
         {
-            // Colliderの半径を考慮して地面から距離を取る
             return hit.point.y + col.bounds.extents.y;
         }
-        return position.y; // 地面がなければそのまま
+        return position.y;
     }
 }
-
