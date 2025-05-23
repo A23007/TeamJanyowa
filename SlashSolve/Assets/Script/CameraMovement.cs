@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public class CameraMovement : MonoBehaviour
 {
+    [Header("Camera Settings")]
     public Transform target;
     public float distance = 5.0f;
     public float height = 3.0f;
@@ -12,6 +13,11 @@ public class CameraMovement : MonoBehaviour
     public float smoothSpeed = 5.0f;
     public float initialRotation = 0f;
     public LayerMask obstructionMask;
+
+    [Header("Transparency Area Settings")]
+    [SerializeField] private float boxWidth = 2f;               // 横幅
+    [SerializeField] private float boxHeight = 2f;              // 高さ
+    [SerializeField] private float boxDepthMultiplier = 0.5f;   // プレイヤーまでの距離に対する奥行き倍率
 
     private float currentRotation;
 
@@ -53,7 +59,7 @@ public class CameraMovement : MonoBehaviour
 
     void HandleObstruction()
     {
-        // 透明化解除（元に戻す）
+        // 元に戻す
         foreach (var renderer in currentlyTransparent)
         {
             if (renderer != null && originalMaterials.ContainsKey(renderer))
@@ -65,16 +71,25 @@ public class CameraMovement : MonoBehaviour
         currentlyTransparent.Clear();
         originalMaterials.Clear();
 
-        Vector3 direction = (target.position + Vector3.up) - transform.position;
-        float dist = direction.magnitude;
+        Vector3 start = transform.position;
+        Vector3 end = target.position + Vector3.up;
+        Vector3 center = (start + end) / 2f;
+        float distanceToTarget = Vector3.Distance(start, end);
 
-        RaycastHit[] hits = Physics.RaycastAll(transform.position, direction.normalized, dist, obstructionMask);
+        Vector3 boxSize = new Vector3(
+            boxWidth,
+            boxHeight,
+            distanceToTarget * boxDepthMultiplier / 2f // OverlapBoxのsizeは「半分の長さ」
+        );
 
-        foreach (RaycastHit hit in hits)
+        Quaternion rotation = Quaternion.LookRotation(end - start);
+
+        Collider[] colliders = Physics.OverlapBox(center, boxSize, rotation, obstructionMask);
+
+        foreach (Collider col in colliders)
         {
-            GameObject hitObj = hit.collider.gameObject;
+            GameObject hitObj = col.gameObject;
 
-            // タグが "Untagged" のオブジェクトのみ透明化
             if (hitObj.tag == "Untagged")
             {
                 Renderer rend = hitObj.GetComponent<Renderer>();
@@ -101,32 +116,43 @@ public class CameraMovement : MonoBehaviour
     {
         Material newMat = new Material(baseMat);
 
-        // URP用 Litシェーダーを指定
         newMat.shader = Shader.Find("Universal Render Pipeline/Lit");
 
-        // 透過設定
-        newMat.SetFloat("_Surface", 1); // 0=Opaque, 1=Transparent
-
-        // Blend設定（URPのLitの透過用）
+        newMat.SetFloat("_Surface", 1);
         newMat.SetFloat("_Blend", (float)UnityEngine.Rendering.BlendMode.SrcAlpha);
         newMat.SetFloat("_SrcBlend", (float)UnityEngine.Rendering.BlendMode.SrcAlpha);
         newMat.SetFloat("_DstBlend", (float)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
         newMat.SetFloat("_BlendOp", (float)UnityEngine.Rendering.BlendOp.Add);
-
-        // ZWrite無効（深度書き込みOFF）
         newMat.SetInt("_ZWrite", 0);
-
-        // 透過キーワード有効化
         newMat.EnableKeyword("_SURFACE_TYPE_TRANSPARENT");
-
-        // レンダーキューを透過用に
         newMat.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Transparent;
 
-        // 透明度設定
         Color c = newMat.color;
-        c.a = 0.3f; // 透明度30%
+        c.a = 0.3f;
         newMat.color = c;
 
         return newMat;
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        if (target == null) return;
+
+        Vector3 start = transform.position;
+        Vector3 end = target.position + Vector3.up;
+        Vector3 center = (start + end) / 2f;
+        float distanceToTarget = Vector3.Distance(start, end);
+
+        Vector3 boxSize = new Vector3(
+            boxWidth,
+            boxHeight,
+            distanceToTarget * boxDepthMultiplier / 2f
+        );
+
+        Quaternion rotation = Quaternion.LookRotation(end - start);
+
+        Gizmos.color = Color.green;
+        Gizmos.matrix = Matrix4x4.TRS(center, rotation, Vector3.one);
+        Gizmos.DrawWireCube(Vector3.zero, boxSize * 2);
     }
 }
