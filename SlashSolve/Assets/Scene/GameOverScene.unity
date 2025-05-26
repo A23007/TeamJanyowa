@@ -770,7 +770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneButtons:
   - button: {fileID: 1208928850}
-    sceneName: Stage 2
+    sceneName: Stage 1
   retryButton: {fileID: 0}
 --- !u!4 &838480778
 Transform:

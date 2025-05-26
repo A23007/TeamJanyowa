@@ -36,13 +36,24 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
+        RaycastHit[] hits = Physics.RaycastAll(ray);
 
-        if (Physics.Raycast(ray, out hit))
+        if (hits.Length > 0)
         {
-            Vector3 targetPosition = hit.point;
+            // 一番奥のヒットを取得（距離が最も遠いもの）
+            RaycastHit farthestHit = hits[0];
+            foreach (var hit in hits)
+            {
+                if (hit.distance > farthestHit.distance)
+                {
+                    farthestHit = hit;
+                }
+            }
+
+            Vector3 targetPosition = farthestHit.point;
             Vector3 currentPosition = transform.position;
 
+            // Y座標を維持（地面と同じ高さを保つ）
             targetPosition.y = currentPosition.y;
 
             Vector3 direction = targetPosition - currentPosition;
@@ -72,28 +83,24 @@ public class PlayerMovement : MonoBehaviour
                 break;
             case FacingDirection.Right:
                 {
-                    // 右（X+）を進行方向に向ける
                     Vector3 forward = Vector3.Cross(Vector3.up, moveDir);
                     transform.rotation = Quaternion.LookRotation(forward, Vector3.up);
                     break;
                 }
             case FacingDirection.Left:
                 {
-                    // 左（X-）を進行方向に向ける
                     Vector3 forward = Vector3.Cross(moveDir, Vector3.up);
                     transform.rotation = Quaternion.LookRotation(forward, Vector3.up);
                     break;
                 }
             case FacingDirection.Up:
                 {
-                    // 上（Y+）を進行方向に向ける
                     Vector3 forward = Vector3.Cross(moveDir, Vector3.right);
                     transform.rotation = Quaternion.LookRotation(forward, Vector3.right);
                     break;
                 }
             case FacingDirection.Down:
                 {
-                    // 下（Y-）を進行方向に向ける
                     Vector3 forward = Vector3.Cross(Vector3.right, moveDir);
                     transform.rotation = Quaternion.LookRotation(forward, Vector3.right);
                     break;
@@ -101,4 +108,3 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 }
-
