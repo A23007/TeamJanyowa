@@ -10,6 +10,7 @@ TagManager:
   - BreakObject
   - DamageObject
   - Enemy
+  - Ground
   layers:
   - Default
   - TransparentFX

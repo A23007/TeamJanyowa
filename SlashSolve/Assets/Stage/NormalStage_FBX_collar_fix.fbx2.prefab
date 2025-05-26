@@ -192,6 +192,10 @@ PrefabInstance:
       propertyPath: m_UseColorTemperature
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -4172562997814350249, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: -4094776745488713927, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
@@ -203,6 +207,10 @@ PrefabInstance:
     - target: {fileID: -4094776745488713927, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_UseColorTemperature
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3875925489024643219, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: -3427377734388446065, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
@@ -340,6 +348,10 @@ PrefabInstance:
       propertyPath: m_UseColorTemperature
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1841058200850605141, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 1947518609482193371, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_Range
       value: 2
@@ -422,6 +434,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5806422426971100572, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028796832831695900, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028796832831695900, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028796832831695900, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028796832831695900, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6034017273137899087, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
@@ -533,6 +561,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1841058200850605141, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3532318399247730413}
+    - targetCorrespondingSourceObject: {fileID: -6163835985542225945, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5459301447360806708}
     - targetCorrespondingSourceObject: {fileID: 5602409199020427707, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7501588009966548850}
@@ -1193,6 +1224,32 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.000001, y: 4, z: 0.19397186}
   m_Center: {x: 0.00000023841858, y: 1.9999999, z: 0.09698414}
+--- !u!1 &6560606006445327681 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6163835985542225945, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
+  m_PrefabInstance: {fileID: 8178066002262334118}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &5459301447360806708
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6560606006445327681}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4, y: 0, z: 4}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6856588657572484879 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3339749790259809705, guid: 9f1418cad68b88d4697d871848c5e38a, type: 3}
