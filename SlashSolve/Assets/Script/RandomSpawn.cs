@@ -10,6 +10,9 @@ public class SpawnableObject
     [Range(0f, 1f)] public float spawnProbability = 1f; // 出現確率
     public int maxSpawnCount = 1000;                   // 個別の最大出現数
     [HideInInspector] public int currentCount = 0;     // 現在の生成数
+
+    [Header("生成時の高さオフセット")]
+    public float heightOffset = 2f;                    // 個別の高さ設定
 }
 
 public class RandomSpawn : MonoBehaviour
@@ -22,7 +25,6 @@ public class RandomSpawn : MonoBehaviour
 
     [Header("生成範囲（基準オブジェクトの上にランダム）")]
     public float spawnRadius = 2f;
-    public float heightOffset = 2f;
 
     [Header("生成設定")]
     public int spawnCountPerInterval = 3;
@@ -47,7 +49,7 @@ public class RandomSpawn : MonoBehaviour
             timer = 0f;
             if (spawnedObjects.Count < maxSimultaneousObjects &&
                 totalSpawned < totalMaxSpawnCount &&
-                IsPlayerInOwnRange()) // 自分の範囲のみチェック
+                IsPlayerInOwnRange())
             {
                 SpawnObjects();
             }
@@ -68,7 +70,7 @@ public class RandomSpawn : MonoBehaviour
             Vector2 randomOffset = Random.insideUnitCircle * spawnRadius;
             Vector3 spawnPos = new Vector3(
                 targetObject.position.x + randomOffset.x,
-                targetObject.position.y + heightOffset,
+                targetObject.position.y + selected.heightOffset, // 個別の高さを使用
                 targetObject.position.z + randomOffset.y
             );
 
@@ -97,16 +99,15 @@ public class RandomSpawn : MonoBehaviour
         return validCandidates[Random.Range(0, validCandidates.Count)];
     }
 
-    // 自分の範囲にPlayerがいるかだけをチェック
     bool IsPlayerInOwnRange()
     {
-        Collider[] hits = Physics.OverlapSphere(targetObject.position + Vector3.up * heightOffset, spawnRadius);
+        Vector3 center = targetObject.position + Vector3.up * 2f; // 共通高さで判定
+        Collider[] hits = Physics.OverlapSphere(center, spawnRadius);
         foreach (var hit in hits)
         {
             if (hit.CompareTag("Player"))
             {
-                // プレイヤーとの距離も念のためチェック（より厳密に）
-                float dist = Vector3.Distance(hit.transform.position, targetObject.position + Vector3.up * heightOffset);
+                float dist = Vector3.Distance(hit.transform.position, center);
                 if (dist <= spawnRadius)
                 {
                     return true;
@@ -116,13 +117,13 @@ public class RandomSpawn : MonoBehaviour
         return false;
     }
 
-    // デバッグ用：生成範囲をSceneビューで表示
     void OnDrawGizmosSelected()
     {
         if (targetObject != null)
         {
             Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(targetObject.position + Vector3.up * heightOffset, spawnRadius);
+            Gizmos.DrawWireSphere(targetObject.position + Vector3.up * 2f, spawnRadius);
         }
     }
 }
+
