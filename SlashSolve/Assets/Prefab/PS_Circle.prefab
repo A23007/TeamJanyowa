@@ -4877,6 +4877,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   offset: {x: -8, y: 1, z: 0}
+  useRotation: 0
+  orbitAroundTarget: 0
+  orbitRadius: 2
+  orbitSpeed: 90
 --- !u!54 &2822451317121382977
 Rigidbody:
   m_ObjectHideFlags: 0
