@@ -231,9 +231,9 @@ MonoBehaviour:
     spawnProbability: 1
     maxSpawnCount: 1000
     currentCount: 0
+    heightOffset: 2
   targetObject: {fileID: 4649853252560730059, guid: a3369e614b700e24e854f9c3561dfbe1, type: 3}
   spawnRadius: 50
-  heightOffset: 2
   spawnCountPerInterval: 3
   spawnInterval: 2
   totalMaxSpawnCount: 1000
@@ -288,9 +288,9 @@ MonoBehaviour:
     spawnProbability: 1
     maxSpawnCount: 100
     currentCount: 0
+    heightOffset: 2
   targetObject: {fileID: 574241847}
   spawnRadius: 10
-  heightOffset: 2
   spawnCountPerInterval: 3
   spawnInterval: 2
   totalMaxSpawnCount: 1000
@@ -361,9 +361,9 @@ MonoBehaviour:
     spawnProbability: 1
     maxSpawnCount: 100
     currentCount: 0
+    heightOffset: 2
   targetObject: {fileID: 643538576}
   spawnRadius: 10
-  heightOffset: 2
   spawnCountPerInterval: 3
   spawnInterval: 2
   totalMaxSpawnCount: 1000
@@ -450,9 +450,9 @@ MonoBehaviour:
     spawnProbability: 1
     maxSpawnCount: 1000
     currentCount: 0
+    heightOffset: 2
   targetObject: {fileID: -8679921383154817045, guid: 53fac0fd5ab40b149b9a767ae8d583c8, type: 3}
   spawnRadius: 10
-  heightOffset: 2
   spawnCountPerInterval: 3
   spawnInterval: 2
   totalMaxSpawnCount: 100
@@ -591,6 +591,9 @@ MonoBehaviour:
   obstructionMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  boxWidth: 2
+  boxHeight: 2
+  boxDepthMultiplier: 0.5
 --- !u!81 &1214780957
 AudioListener:
   m_ObjectHideFlags: 0
@@ -700,9 +703,9 @@ MonoBehaviour:
     spawnProbability: 1
     maxSpawnCount: 100
     currentCount: 0
+    heightOffset: 2
   targetObject: {fileID: 1801852990}
   spawnRadius: 10
-  heightOffset: 2
   spawnCountPerInterval: 3
   spawnInterval: 2
   totalMaxSpawnCount: 1000
