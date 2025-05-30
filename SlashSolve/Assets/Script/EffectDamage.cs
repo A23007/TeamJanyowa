@@ -1,12 +1,12 @@
 //エフェクトのダメージ判定 増田
 
 using UnityEngine;
+using System.Collections.Generic;
 
 public class EffectDamage : MonoBehaviour
 {
     public int damage = 10;
 
-    // ダメージ倍率を Unity Inspector 上で設定できるように
     [Header("Damage Multipliers")]
     public float breakObjectDamageMultiplier = 1f;
     public float enemyDamageMultiplier = 1f;
@@ -15,16 +15,30 @@ public class EffectDamage : MonoBehaviour
     public float paperObjectDamageMultiplier = 1f;
 
     private ParticleSystem part;
-    private ParticleCollisionEvent[] collisionEvents;
+    private List<ParticleCollisionEvent> collisionEvents;
 
     void Start()
     {
+        // ParticleSystem を子オブジェクトも含めて探すように変更
         part = GetComponent<ParticleSystem>();
-        collisionEvents = new ParticleCollisionEvent[16];
+        if (part == null)
+        {
+            part = GetComponentInChildren<ParticleSystem>();
+        }
+
+        // エラーチェック：見つからなかった場合ログ出力
+        if (part == null)
+        {
+            Debug.LogError("ParticleSystem が見つかりません。この GameObject または子オブジェクトに ParticleSystem を追加してください。");
+        }
+
+        collisionEvents = new List<ParticleCollisionEvent>();
     }
 
     void OnParticleCollision(GameObject other)
     {
+        if (part == null) return; // 念のため null チェック
+
         int numCollisionEvents = part.GetCollisionEvents(other, collisionEvents);
 
         for (int i = 0; i < numCollisionEvents; i++)
@@ -32,52 +46,36 @@ public class EffectDamage : MonoBehaviour
             switch (other.tag)
             {
                 case "BreakObject":
-                    BreakObject breakObj = other.GetComponent<BreakObject>();
+                    var breakObj = other.GetComponent<BreakObject>();
                     if (breakObj != null)
-                    {
-                        // BreakObjectのダメージ倍率を適用
                         breakObj.TakeDamage(Mathf.RoundToInt(damage * breakObjectDamageMultiplier));
-                    }
                     break;
 
                 case "Enemy":
-                    EnemyStatus enemy = other.GetComponent<EnemyStatus>();
+                    var enemy = other.GetComponent<EnemyStatus>();
                     if (enemy != null)
-                    {
-                        // Enemyのダメージ倍率を適用
                         enemy.TakeDamage(Mathf.RoundToInt(damage * enemyDamageMultiplier));
-                    }
                     break;
 
                 case "RockObject":
-                    EnemyStatus rockObj = other.GetComponent<EnemyStatus>();
+                    var rockObj = other.GetComponent<EnemyStatus>();
                     if (rockObj != null)
-                    {
-                        // RockObjectのダメージ倍率を適用
                         rockObj.TakeDamage(Mathf.RoundToInt(damage * rockObjectDamageMultiplier));
-                    }
                     break;
 
                 case "ScissorsObject":
-                    EnemyStatus scissorsObj = other.GetComponent<EnemyStatus>();
+                    var scissorsObj = other.GetComponent<EnemyStatus>();
                     if (scissorsObj != null)
-                    {
-                        // ScissorsObjectのダメージ倍率を適用
                         scissorsObj.TakeDamage(Mathf.RoundToInt(damage * scissorsObjectDamageMultiplier));
-                    }
                     break;
 
                 case "PaperObject":
-                    EnemyStatus paperObj = other.GetComponent<EnemyStatus>();
+                    var paperObj = other.GetComponent<EnemyStatus>();
                     if (paperObj != null)
-                    {
-                        // PaperObjectのダメージ倍率を適用
                         paperObj.TakeDamage(Mathf.RoundToInt(damage * paperObjectDamageMultiplier));
-                    }
                     break;
 
                 default:
-                    // 対応していないタグは無視
                     break;
             }
         }

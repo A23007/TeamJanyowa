@@ -6,40 +6,40 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/TestScenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scene/Stage 1.unity
+    path: Assets/GameScene/Stage 1.unity
     guid: e88a20e3972eb63409eb8968cd12806d
   - enabled: 1
-    path: Assets/Scene/GameOverScene.unity
+    path: Assets/GameScene/GameOverScene.unity
     guid: ae2955dc703571a44ae485090ea403bb
   - enabled: 1
-    path: Assets/Scene/ResultScene 1.unity
+    path: Assets/GameScene/ResultScene 1.unity
     guid: fe1a03915e8aeb4419eab066c7b9d93f
   - enabled: 1
-    path: Assets/Scene/Stage 2.unity
+    path: Assets/GameScene/Stage 2.unity
     guid: 77dccfac3755a1c479838e4d54aea56a
   - enabled: 1
-    path: Assets/Scene/Stage 3.unity
+    path: Assets/GameScene/Stage 3.unity
     guid: 16ba78f7a61e1304e8a9103c04e08c7f
   - enabled: 1
-    path: Assets/Scene/Stage 4.unity
+    path: Assets/GameScene/Stage 4.unity
     guid: cb4bc41aeb456214fbe37c101d4c1df6
   - enabled: 1
-    path: Assets/Scene/Stage 5.unity
+    path: Assets/GameScene/Stage 5.unity
     guid: 26ab83258607aa84d8b363f50571e2ad
   - enabled: 1
-    path: Assets/Scene/Stage 6.unity
+    path: Assets/GameScene/Stage 6.unity
     guid: 3020cbba51fc4cc4d907f73a025062be
   - enabled: 1
-    path: Assets/Scene/Stage 7.unity
+    path: Assets/GameScene/Stage 7.unity
     guid: 4edaf5605971d264ba9e8f395eb5888a
   - enabled: 1
-    path: Assets/Scene/Stage 8.unity
+    path: Assets/GameScene/Stage 8.unity
     guid: 1765652f451456146b25fbb2570e6752
   - enabled: 1
-    path: Assets/Scene/Stage0.unity
+    path: Assets/GameScene/Stage0.unity
     guid: f5347389845e67d48b0353b3b5209f55
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
