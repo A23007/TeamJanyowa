@@ -169,17 +169,19 @@ MonoBehaviour:
     spawnProbability: 1
     maxSpawnCount: 100
     currentCount: 0
+    heightOffset: 2
   - prefab: {fileID: 2883594560889133788, guid: 18df203e2c8616645a03711f3cfcbcdf, type: 3}
     spawnProbability: 1
     maxSpawnCount: 100
     currentCount: 0
+    heightOffset: 2
   - prefab: {fileID: 2883594560889133788, guid: 8bf934b9e46660e48bbac878bad38a9b, type: 3}
     spawnProbability: 1
     maxSpawnCount: 100
     currentCount: 0
+    heightOffset: 2
   targetObject: {fileID: 4488795392953593102}
   spawnRadius: 50
-  heightOffset: 2
   spawnCountPerInterval: 3
   spawnInterval: 2
   totalMaxSpawnCount: 1000

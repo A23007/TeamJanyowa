@@ -81,6 +81,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -2060365794619320296, guid: e444931f7f3c46847b9941a7ccd0ede4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4347166161248107089}
+    - targetCorrespondingSourceObject: {fileID: -2060365794619320296, guid: e444931f7f3c46847b9941a7ccd0ede4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5378731509056271165}
   m_SourcePrefab: {fileID: 100100000, guid: e444931f7f3c46847b9941a7ccd0ede4, type: 3}
 --- !u!1 &203005985289403234 stripped
 GameObject:
@@ -253,3 +256,21 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &5378731509056271165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203005985289403234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26850da6f4cb6a447be766b283b8fbd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  breakObjectDamageMultiplier: 1
+  enemyDamageMultiplier: 1
+  rockObjectDamageMultiplier: 2
+  scissorsObjectDamageMultiplier: 0.5
+  paperObjectDamageMultiplier: 1

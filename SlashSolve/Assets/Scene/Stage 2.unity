@@ -242,9 +242,9 @@ MonoBehaviour:
     spawnProbability: 1
     maxSpawnCount: 100
     currentCount: 0
+    heightOffset: 2
   targetObject: {fileID: 1006717806}
   spawnRadius: 10
-  heightOffset: 2
   spawnCountPerInterval: 3
   spawnInterval: 2
   totalMaxSpawnCount: 1000
@@ -315,9 +315,9 @@ MonoBehaviour:
     spawnProbability: 1
     maxSpawnCount: 100
     currentCount: 0
+    heightOffset: 2
   targetObject: {fileID: 1027978594}
   spawnRadius: 10
-  heightOffset: 2
   spawnCountPerInterval: 3
   spawnInterval: 2
   totalMaxSpawnCount: 1000
@@ -400,7 +400,6 @@ MonoBehaviour:
   spawnables: []
   targetObject: {fileID: 4649853252560730059, guid: a3369e614b700e24e854f9c3561dfbe1, type: 3}
   spawnRadius: 50
-  heightOffset: 2
   spawnCountPerInterval: 3
   spawnInterval: 2
   totalMaxSpawnCount: 1000
@@ -660,9 +659,9 @@ MonoBehaviour:
     spawnProbability: 0.136
     maxSpawnCount: 1000
     currentCount: 0
+    heightOffset: 2
   targetObject: {fileID: -8679921383154817045, guid: 53fac0fd5ab40b149b9a767ae8d583c8, type: 3}
   spawnRadius: 10
-  heightOffset: 2
   spawnCountPerInterval: 3
   spawnInterval: 2
   totalMaxSpawnCount: 100
@@ -717,9 +716,9 @@ MonoBehaviour:
     spawnProbability: 0.237
     maxSpawnCount: 100
     currentCount: 0
+    heightOffset: 2
   targetObject: {fileID: 1580767007}
   spawnRadius: 10
-  heightOffset: 2
   spawnCountPerInterval: 3
   spawnInterval: 2
   totalMaxSpawnCount: 1000
