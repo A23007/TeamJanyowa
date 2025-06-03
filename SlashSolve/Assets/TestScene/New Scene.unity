@@ -538,8 +538,20 @@ PrefabInstance:
       value: syujinkou
       objectReference: {fileID: 0}
     - target: {fileID: 5598093573281876813, guid: f6b048ac1081c3447aa39218f1bbcc7e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5598093573281876813, guid: f6b048ac1081c3447aa39218f1bbcc7e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5598093573281876813, guid: f6b048ac1081c3447aa39218f1bbcc7e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5598093573281876813, guid: f6b048ac1081c3447aa39218f1bbcc7e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.93
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5598093573281876813, guid: f6b048ac1081c3447aa39218f1bbcc7e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -547,7 +559,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5598093573281876813, guid: f6b048ac1081c3447aa39218f1bbcc7e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.41
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 5598093573281876813, guid: f6b048ac1081c3447aa39218f1bbcc7e, type: 3}
       propertyPath: m_LocalRotation.w
