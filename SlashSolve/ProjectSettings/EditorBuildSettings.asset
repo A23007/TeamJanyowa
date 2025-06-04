@@ -39,7 +39,7 @@ EditorBuildSettings:
     path: Assets/GameScene/Stage 8.unity
     guid: 1765652f451456146b25fbb2570e6752
   - enabled: 1
-    path: Assets/GameScene/Stage0.unity
+    path: Assets/GameScene/Stage 0.unity
     guid: f5347389845e67d48b0353b3b5209f55
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
