@@ -633,7 +633,7 @@ MonoBehaviour:
   bulletLifetime: 5
   spreadAngle: 15
   shootHeight: 1
---- !u!114 &975048470
+--- !u!114 &975048476
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -645,9 +645,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cac805802af5184cade6623cadf2533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPrefab: {fileID: 7281727346233261844, guid: ffc8a0d121c7fd642b5c11402826f056, type: 3}
-  speed: 10
-  destroyAfterSeconds: 1
+  objectToSpawn: {fileID: 7281727346233261844, guid: ffc8a0d121c7fd642b5c11402826f056, type: 3}
+  spawnInterval: 5
+  spawnDistance: 8
+  lifeTime: 5
+  fixedYPosition: 1
 --- !u!1001 &1017702972
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -999,7 +1001,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4370608218262103364, guid: d46c709312fea1d4ebf928afd0da3d16, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.33
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4370608218262103364, guid: d46c709312fea1d4ebf928afd0da3d16, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1039,7 +1041,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7657687229696155412, guid: d46c709312fea1d4ebf928afd0da3d16, type: 3}
       propertyPath: moveSpeed
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8912466926726100506, guid: d46c709312fea1d4ebf928afd0da3d16, type: 3}
       propertyPath: maxHP
@@ -1130,7 +1132,7 @@ PrefabInstance:
       addedObject: {fileID: 975048468}
     - targetCorrespondingSourceObject: {fileID: 4029689946755973118, guid: d46c709312fea1d4ebf928afd0da3d16, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 975048470}
+      addedObject: {fileID: 975048476}
   m_SourcePrefab: {fileID: 100100000, guid: d46c709312fea1d4ebf928afd0da3d16, type: 3}
 --- !u!1001 &5828648563925706345
 PrefabInstance:
