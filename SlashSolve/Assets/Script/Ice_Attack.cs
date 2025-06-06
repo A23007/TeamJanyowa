@@ -14,6 +14,7 @@ public class Ice_Attack : MonoBehaviour
 
     private float timer = 0f;
     private Vector3 lastPosition;
+    private Vector3 lastMoveDirection = Vector3.right;  // 初期方向は右向き
 
     void Start()
     {
@@ -24,55 +25,69 @@ public class Ice_Attack : MonoBehaviour
     {
         timer += Time.deltaTime;
 
+        // 現在の移動ベクトルを計算
+        Vector3 moveDirection = transform.position - lastPosition;
+
+        // ある程度動いていれば方向を更新
+        if (moveDirection.magnitude > 0.01f)
+        {
+            lastMoveDirection = moveDirection.normalized;
+        }
+
+        // 一定時間経過でオブジェクト生成
         if (timer >= spawnInterval)
         {
             timer = 0f;
-            SpawnObject();
+            SpawnObject(lastMoveDirection);
         }
 
         lastPosition = transform.position;
     }
 
-    void SpawnObject()
+    void SpawnObject(Vector3 direction)
     {
         if (objectToSpawn == null) return;
 
-        // 移動方向の取得（停止中は右向き）
-        Vector3 moveDirection = (transform.position - lastPosition).normalized;
-        if (moveDirection == Vector3.zero) moveDirection = Vector3.right;
-
         // 生成位置（Y固定）
         Vector3 spawnPosition = new Vector3(
-            transform.position.x + moveDirection.x * spawnDistance,
+            transform.position.x + direction.x * spawnDistance,
             fixedYPosition,
-            transform.position.z + moveDirection.z * spawnDistance
+            transform.position.z + direction.z * spawnDistance
         );
 
-        // 生成（向きは移動方向）
-        GameObject spawned = Instantiate(objectToSpawn, spawnPosition, Quaternion.LookRotation(moveDirection));
+        // プレハブを生成
+        GameObject spawned = Instantiate(objectToSpawn, spawnPosition, Quaternion.LookRotation(direction));
 
-        // Rigidbody を持っていれば isKinematic にして動かないようにする
+        // Rigidbody 設定（動かないように）
         Rigidbody rb = spawned.GetComponent<Rigidbody>();
         if (rb != null)
         {
-            rb.isKinematic = true;     // 物理で動かない
-            rb.useGravity = false;     // 重力無効（必要なら）
+            rb.isKinematic = true;
+            rb.useGravity = false;
         }
 
-        // Ground および Player タグとの衝突を無視
+        // Ground および Player タグとの衝突を無視（スクリプト内完結）
         string[] ignoreTags = { "Ground", "Player" };
-        var ignoreColliders = ignoreTags
-            .SelectMany(tag => GameObject.FindGameObjectsWithTag(tag))
-            .SelectMany(go => go.GetComponentsInChildren<Collider>())
-            .ToArray();
 
-        Collider[] spawnedColliders = spawned.GetComponentsInChildren<Collider>();
+        // 生成されたオブジェクトのすべてのColliderを取得
+        Collider[] spawnedColliders = spawned.GetComponentsInChildren<Collider>(includeInactive: true);
 
-        foreach (var ignoreCol in ignoreColliders)
+        foreach (string tag in ignoreTags)
         {
-            foreach (var spawnCol in spawnedColliders)
+            GameObject[] targets = GameObject.FindGameObjectsWithTag(tag);
+            foreach (GameObject target in targets)
             {
-                Physics.IgnoreCollision(spawnCol, ignoreCol);
+                Collider[] targetColliders = target.GetComponentsInChildren<Collider>(includeInactive: true);
+                foreach (var sc in spawnedColliders)
+                {
+                    foreach (var tc in targetColliders)
+                    {
+                        if (sc != null && tc != null)
+                        {
+                            Physics.IgnoreCollision(sc, tc, true);
+                        }
+                    }
+                }
             }
         }
 
