@@ -1,5 +1,7 @@
+//氷攻撃　増田
 
 
+// 氷攻撃　増田（Player中心高さ+1で生成）
 
 using UnityEngine;
 using System.Linq;
@@ -7,10 +9,10 @@ using System.Linq;
 public class Ice_Attack : MonoBehaviour
 {
     public GameObject objectToSpawn;     // 生成するプレハブ
+    public Transform target;             // 追従対象（例: Player）を外部から指定可能
     public float spawnInterval = 1.0f;   // 生成間隔（秒）
     public float spawnDistance = 2.0f;   // 生成距離
     public float lifeTime = 5.0f;        // 存続時間
-    public float fixedYPosition = 0.0f;  // 生成時のY座標固定
 
     private float timer = 0f;
     private Vector3 lastPosition;
@@ -18,47 +20,64 @@ public class Ice_Attack : MonoBehaviour
 
     void Start()
     {
-        lastPosition = transform.position;
+        if (target == null)
+        {
+            GameObject player = GameObject.FindWithTag("Player");
+            if (player != null)
+            {
+                target = player.transform;
+            }
+            else
+            {
+                Debug.LogWarning("Playerタグのオブジェクトが見つかりませんでした。Ice_Attack の target を手動で設定してください。");
+                enabled = false;
+                return;
+            }
+        }
+
+        lastPosition = target.position;
     }
 
     void Update()
     {
         timer += Time.deltaTime;
 
-        // 現在の移動ベクトルを計算
-        Vector3 moveDirection = transform.position - lastPosition;
+        Vector3 moveDirection = target.position - lastPosition;
 
-        // ある程度動いていれば方向を更新
         if (moveDirection.magnitude > 0.01f)
         {
             lastMoveDirection = moveDirection.normalized;
         }
 
-        // 一定時間経過でオブジェクト生成
         if (timer >= spawnInterval)
         {
             timer = 0f;
             SpawnObject(lastMoveDirection);
         }
 
-        lastPosition = transform.position;
+        lastPosition = target.position;
     }
 
     void SpawnObject(Vector3 direction)
     {
-        if (objectToSpawn == null) return;
+        if (objectToSpawn == null || target == null) return;
 
-        // 生成位置（Y固定）
+        // 高さを target の中心 + 1 に設定
+        float y = target.position.y;
+        Renderer renderer = target.GetComponentInChildren<Renderer>();
+        if (renderer != null)
+        {
+            y = renderer.bounds.center.y + 0f;
+        }
+
         Vector3 spawnPosition = new Vector3(
-            transform.position.x + direction.x * spawnDistance,
-            fixedYPosition,
-            transform.position.z + direction.z * spawnDistance
+            target.position.x + direction.x * spawnDistance,
+            y,
+            target.position.z + direction.z * spawnDistance
         );
 
-        // プレハブを生成
         GameObject spawned = Instantiate(objectToSpawn, spawnPosition, Quaternion.LookRotation(direction));
 
-        // Rigidbody 設定（動かないように）
         Rigidbody rb = spawned.GetComponent<Rigidbody>();
         if (rb != null)
         {
@@ -66,18 +85,15 @@ public class Ice_Attack : MonoBehaviour
             rb.useGravity = false;
         }
 
-        // Ground および Player タグとの衝突を無視（スクリプト内完結）
         string[] ignoreTags = { "Ground", "Player" };
-
-        // 生成されたオブジェクトのすべてのColliderを取得
         Collider[] spawnedColliders = spawned.GetComponentsInChildren<Collider>(includeInactive: true);
 
         foreach (string tag in ignoreTags)
         {
             GameObject[] targets = GameObject.FindGameObjectsWithTag(tag);
-            foreach (GameObject target in targets)
+            foreach (GameObject targetObj in targets)
             {
-                Collider[] targetColliders = target.GetComponentsInChildren<Collider>(includeInactive: true);
+                Collider[] targetColliders = targetObj.GetComponentsInChildren<Collider>(includeInactive: true);
                 foreach (var sc in spawnedColliders)
                 {
                     foreach (var tc in targetColliders)
@@ -91,7 +107,6 @@ public class Ice_Attack : MonoBehaviour
             }
         }
 
-        // 一定時間後に削除
         Destroy(spawned, lifeTime);
     }
 }
