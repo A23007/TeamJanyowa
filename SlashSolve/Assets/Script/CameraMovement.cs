@@ -26,11 +26,24 @@ public class CameraMovement : MonoBehaviour
 
     void Start()
     {
+        // Playerタグのオブジェクトを自動取得
+        GameObject playerObj = GameObject.FindWithTag("Player");
+        if (playerObj != null)
+        {
+            target = playerObj.transform;
+        }
+        else
+        {
+            Debug.LogWarning("Playerタグを持つオブジェクトが見つかりません！");
+        }
+
         currentRotation = initialRotation;
     }
 
     void LateUpdate()
     {
+        if (target == null) return;
+
         HandleRotationInput();
         MoveCamera();
         HandleObstruction();

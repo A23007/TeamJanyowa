@@ -19,12 +19,34 @@ public class Thunder_Attack : MonoBehaviour
     public Vector3 spawnRange = new Vector3(5f, 0f, 5f);
 
     [Header("対象タグ")]
-    public string[] targetTags = { "Enemy", "RockObject", "ScissorsObject", "PeparObject" };
+    public string[] targetTags = { "Enemy", "RockObject", "ScissorsObject", "PaperObject" };
+
+    [Header("発射基準オブジェクト (未設定ならPlayer自動取得)")]
+    public Transform target;
 
     private float timer = 0f;
 
+    void Start()
+    {
+        if (target == null)
+        {
+            GameObject player = GameObject.FindWithTag("Player");
+            if (player != null)
+            {
+                target = player.transform;
+            }
+            else
+            {
+                Debug.LogWarning("Playerタグのオブジェクトが見つかりません。targetを手動設定してください。");
+                enabled = false;
+            }
+        }
+    }
+
     void Update()
     {
+        if (target == null) return;
+
         timer += Time.deltaTime;
 
         if (timer >= spawnInterval)
@@ -44,8 +66,8 @@ public class Thunder_Attack : MonoBehaviour
 
         if (tryHit)
         {
-            GameObject target = potentialTargets[Random.Range(0, potentialTargets.Length)];
-            spawnPosition = target.transform.position;
+            GameObject chosenTarget = potentialTargets[Random.Range(0, potentialTargets.Length)];
+            spawnPosition = chosenTarget.transform.position;
         }
         else
         {
@@ -58,7 +80,7 @@ public class Thunder_Attack : MonoBehaviour
 
     Vector3 GetRandomPosition()
     {
-        return transform.position + new Vector3(
+        return target.position + new Vector3(
             Random.Range(-spawnRange.x, spawnRange.x),
             Random.Range(-spawnRange.y, spawnRange.y),
             Random.Range(-spawnRange.z, spawnRange.z)
@@ -86,7 +108,7 @@ public class Thunder_Attack : MonoBehaviour
 
     bool IsWithinRange(Vector3 position)
     {
-        Vector3 relativePos = position - transform.position;
+        Vector3 relativePos = position - target.position;
 
         return Mathf.Abs(relativePos.x) <= spawnRange.x &&
                Mathf.Abs(relativePos.y) <= spawnRange.y &&

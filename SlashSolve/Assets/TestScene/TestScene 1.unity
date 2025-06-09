@@ -376,6 +376,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7416456168496938919, guid: 00aa3842fc41c1d4685e73254cd1e252, type: 3}
+      propertyPath: moveSpeed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7707999354311347847, guid: 00aa3842fc41c1d4685e73254cd1e252, type: 3}
       propertyPath: hpText
       value: 
@@ -486,11 +490,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!20 &1496640279 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 7493504189381529984, guid: 9609ae16ef08efb45bfa7621882c7955, type: 3}
-  m_PrefabInstance: {fileID: 7049850615042825613}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1624820547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -676,7 +675,7 @@ PrefabInstance:
     - target: {fileID: 2199455013996077448, guid: 5ebdbf53409bfd945a1d876ab2ba4337, type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 1496640279}
+      objectReference: {fileID: 0}
     - target: {fileID: 6264807126308185367, guid: 5ebdbf53409bfd945a1d876ab2ba4337, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1062,6 +1061,10 @@ PrefabInstance:
       value: Main Camera
       objectReference: {fileID: 0}
     - target: {fileID: 8627078013354063384, guid: 9609ae16ef08efb45bfa7621882c7955, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 642745146}
+    - target: {fileID: 8627220843897108516, guid: 9609ae16ef08efb45bfa7621882c7955, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 642745146}
