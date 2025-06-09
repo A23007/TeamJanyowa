@@ -4858,9 +4858,10 @@ GameObject:
   - component: {fileID: 2173700475844661235}
   - component: {fileID: 8044571982196970721}
   - component: {fileID: 7069588546607895421}
+  - component: {fileID: 8477001913455729035}
   m_Layer: 6
   m_Name: ps_fire_main
-  m_TagString: Untagged
+  m_TagString: fireAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9737,6 +9738,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &8477001913455729035
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304958196372449938}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.1396646
+  m_Height: 6.119273
+  m_Direction: 1
+  m_Center: {x: -0.037780404, y: 1.239612, z: 0.119662434}
 --- !u!1 &3559938447230604928
 GameObject:
   m_ObjectHideFlags: 0
@@ -24349,7 +24373,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 1.848e-42}
+  m_BoundingSphereOverride: {x: 4.9015e-41, y: 0, z: 0, w: 1e-45}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0

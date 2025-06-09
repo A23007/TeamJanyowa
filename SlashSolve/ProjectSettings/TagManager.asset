@@ -11,6 +11,8 @@ TagManager:
   - DamageObject
   - Enemy
   - Ground
+  - IceObject
+  - fireAttack
   layers:
   - Default
   - TransparentFX
