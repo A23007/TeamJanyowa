@@ -9705,7 +9705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fddf9228c9b6eb544bd0e1c080233a82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 200
   breakObjectDamageMultiplier: 1
   enemyDamageMultiplier: 1
   rockObjectDamageMultiplier: 2
@@ -24373,7 +24373,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 4.9015e-41, y: 0, z: 0, w: 1e-45}
+  m_BoundingSphereOverride: {x: -0.00000011920929, y: -1.0000001, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
