@@ -329,11 +329,11 @@ PrefabInstance:
     - target: {fileID: 3003837628522608085, guid: e025e78e0f9b9a348b95c50e2b67b818, type: 3}
       propertyPath: 'clickableButtons.Array.data[1]'
       value: 
-      objectReference: {fileID: 1502640863}
+      objectReference: {fileID: 0}
     - target: {fileID: 3003837628522608085, guid: e025e78e0f9b9a348b95c50e2b67b818, type: 3}
       propertyPath: 'clickableButtons.Array.data[2]'
       value: 
-      objectReference: {fileID: 1202144112}
+      objectReference: {fileID: 0}
     - target: {fileID: 6086639467495347112, guid: e025e78e0f9b9a348b95c50e2b67b818, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.3
@@ -411,11 +411,11 @@ PrefabInstance:
     - target: {fileID: 3003837628522608085, guid: e025e78e0f9b9a348b95c50e2b67b818, type: 3}
       propertyPath: 'clickableButtons.Array.data[1]'
       value: 
-      objectReference: {fileID: 1502640863}
+      objectReference: {fileID: 0}
     - target: {fileID: 3003837628522608085, guid: e025e78e0f9b9a348b95c50e2b67b818, type: 3}
       propertyPath: 'clickableButtons.Array.data[2]'
       value: 
-      objectReference: {fileID: 1202144112}
+      objectReference: {fileID: 0}
     - target: {fileID: 6086639467495347112, guid: e025e78e0f9b9a348b95c50e2b67b818, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.4
@@ -640,11 +640,11 @@ PrefabInstance:
     - target: {fileID: 3003837628522608085, guid: e025e78e0f9b9a348b95c50e2b67b818, type: 3}
       propertyPath: 'clickableButtons.Array.data[1]'
       value: 
-      objectReference: {fileID: 1502640863}
+      objectReference: {fileID: 0}
     - target: {fileID: 3003837628522608085, guid: e025e78e0f9b9a348b95c50e2b67b818, type: 3}
       propertyPath: 'clickableButtons.Array.data[2]'
       value: 
-      objectReference: {fileID: 1202144112}
+      objectReference: {fileID: 0}
     - target: {fileID: 6086639467495347112, guid: e025e78e0f9b9a348b95c50e2b67b818, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -717,11 +717,11 @@ PrefabInstance:
     - target: {fileID: 3003837628522608085, guid: e025e78e0f9b9a348b95c50e2b67b818, type: 3}
       propertyPath: 'clickableButtons.Array.data[1]'
       value: 
-      objectReference: {fileID: 1502640863}
+      objectReference: {fileID: 0}
     - target: {fileID: 3003837628522608085, guid: e025e78e0f9b9a348b95c50e2b67b818, type: 3}
       propertyPath: 'clickableButtons.Array.data[2]'
       value: 
-      objectReference: {fileID: 1202144112}
+      objectReference: {fileID: 0}
     - target: {fileID: 6086639467495347112, guid: e025e78e0f9b9a348b95c50e2b67b818, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20
@@ -878,11 +878,11 @@ PrefabInstance:
     - target: {fileID: 3003837628522608085, guid: e025e78e0f9b9a348b95c50e2b67b818, type: 3}
       propertyPath: 'clickableButtons.Array.data[1]'
       value: 
-      objectReference: {fileID: 1502640863}
+      objectReference: {fileID: 0}
     - target: {fileID: 3003837628522608085, guid: e025e78e0f9b9a348b95c50e2b67b818, type: 3}
       propertyPath: 'clickableButtons.Array.data[2]'
       value: 
-      objectReference: {fileID: 1202144112}
+      objectReference: {fileID: 0}
     - target: {fileID: 6086639467495347112, guid: e025e78e0f9b9a348b95c50e2b67b818, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1342,11 +1342,11 @@ PrefabInstance:
     - target: {fileID: 3003837628522608085, guid: e025e78e0f9b9a348b95c50e2b67b818, type: 3}
       propertyPath: 'clickableButtons.Array.data[1]'
       value: 
-      objectReference: {fileID: 1502640863}
+      objectReference: {fileID: 0}
     - target: {fileID: 3003837628522608085, guid: e025e78e0f9b9a348b95c50e2b67b818, type: 3}
       propertyPath: 'clickableButtons.Array.data[2]'
       value: 
-      objectReference: {fileID: 1202144112}
+      objectReference: {fileID: 0}
     - target: {fileID: 6086639467495347112, guid: e025e78e0f9b9a348b95c50e2b67b818, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.02
@@ -1396,28 +1396,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e025e78e0f9b9a348b95c50e2b67b818, type: 3}
---- !u!114 &1202144112 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 73473870045884360, guid: 5758b38719747694b98e17c8f36e741e, type: 3}
-  m_PrefabInstance: {fileID: 1761248181}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1502640863 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4006567042301217632, guid: 5758b38719747694b98e17c8f36e741e, type: 3}
-  m_PrefabInstance: {fileID: 1761248181}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1520397874 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4593434932392632454, guid: 5758b38719747694b98e17c8f36e741e, type: 3}

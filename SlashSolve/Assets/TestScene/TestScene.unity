@@ -119,17 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &181216854 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 73473870045884360, guid: 5758b38719747694b98e17c8f36e741e, type: 3}
-  m_PrefabInstance: {fileID: 3979198167731347609}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &223064421
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,17 +435,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1334738851 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4006567042301217632, guid: 5758b38719747694b98e17c8f36e741e, type: 3}
-  m_PrefabInstance: {fileID: 3979198167731347609}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1384510736 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 239233620751216582, guid: 5ebdbf53409bfd945a1d876ab2ba4337, type: 3}
@@ -626,11 +604,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!20 &1496640279 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 7493504189381529984, guid: 9609ae16ef08efb45bfa7621882c7955, type: 3}
-  m_PrefabInstance: {fileID: 7049850615042825613}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1675927750
 GameObject:
   m_ObjectHideFlags: 0
@@ -993,7 +966,7 @@ PrefabInstance:
     - target: {fileID: 2199455013996077448, guid: 5ebdbf53409bfd945a1d876ab2ba4337, type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 1496640279}
+      objectReference: {fileID: 0}
     - target: {fileID: 6264807126308185367, guid: 5ebdbf53409bfd945a1d876ab2ba4337, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1329,11 +1302,11 @@ PrefabInstance:
     - target: {fileID: 3003837628522608085, guid: e025e78e0f9b9a348b95c50e2b67b818, type: 3}
       propertyPath: 'clickableButtons.Array.data[1]'
       value: 
-      objectReference: {fileID: 1334738851}
+      objectReference: {fileID: 0}
     - target: {fileID: 3003837628522608085, guid: e025e78e0f9b9a348b95c50e2b67b818, type: 3}
       propertyPath: 'clickableButtons.Array.data[2]'
       value: 
-      objectReference: {fileID: 181216854}
+      objectReference: {fileID: 0}
     - target: {fileID: 6086639467495347112, guid: e025e78e0f9b9a348b95c50e2b67b818, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

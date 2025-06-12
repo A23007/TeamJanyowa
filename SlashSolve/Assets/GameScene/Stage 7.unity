@@ -206,6 +206,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7657687229696155412, guid: 155c2eb7762110d469bfc87d114cbd0e, type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8912466926726100506, guid: 155c2eb7762110d469bfc87d114cbd0e, type: 3}
+      propertyPath: maxHP
+      value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8912466926726100506, guid: 155c2eb7762110d469bfc87d114cbd0e, type: 3}
+      propertyPath: hpText
+      value: 
+      objectReference: {fileID: 905750995}
+    - target: {fileID: 8912466926726100506, guid: 155c2eb7762110d469bfc87d114cbd0e, type: 3}
+      propertyPath: hpSlider
+      value: 
+      objectReference: {fileID: 905750994}
     - target: {fileID: 4029689946755973118, guid: d46c709312fea1d4ebf928afd0da3d16, type: 3}
       propertyPath: m_Name
       value: Player
@@ -259,22 +275,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 905750995}
     - target: {fileID: 8912466926726100506, guid: d46c709312fea1d4ebf928afd0da3d16, type: 3}
-      propertyPath: hpSlider
-      value: 
-      objectReference: {fileID: 905750994}
-    - target: {fileID: 7657687229696155412, guid: 155c2eb7762110d469bfc87d114cbd0e, type: 3}
-      propertyPath: moveSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8912466926726100506, guid: 155c2eb7762110d469bfc87d114cbd0e, type: 3}
-      propertyPath: maxHP
-      value: 100000
-      objectReference: {fileID: 0}
-    - target: {fileID: 8912466926726100506, guid: 155c2eb7762110d469bfc87d114cbd0e, type: 3}
-      propertyPath: hpText
-      value: 
-      objectReference: {fileID: 905750995}
-    - target: {fileID: 8912466926726100506, guid: 155c2eb7762110d469bfc87d114cbd0e, type: 3}
       propertyPath: hpSlider
       value: 
       objectReference: {fileID: 905750994}
@@ -354,13 +354,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14e14c2a06354d9458108f57ac722791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireMode: 0
   bulletPrefab: {fileID: 7379035597182429830, guid: 202f46bce3c74c042bbf4f90aa2e7a2a, type: 3}
+  shootOrigin: {fileID: 0}
   shootInterval: 10
   moveSpeed: 20
   bulletLifetime: 5
   spreadAngle: 15
-  shootHeight: 1
+  bulletCount: 5
 --- !u!114 &353692134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,13 +373,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14e14c2a06354d9458108f57ac722791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireMode: 0
   bulletPrefab: {fileID: 7888139642672209451, guid: 438544d3acde3554b91232ea6b547023, type: 3}
+  shootOrigin: {fileID: 0}
   shootInterval: 3
   moveSpeed: 30
   bulletLifetime: 5
   spreadAngle: 15
-  shootHeight: 1
+  bulletCount: 5
 --- !u!114 &353692135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,13 +392,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14e14c2a06354d9458108f57ac722791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireMode: 0
   bulletPrefab: {fileID: 408734530095986418, guid: 9213a3005b2c744439be51cfbea39245, type: 3}
+  shootOrigin: {fileID: 0}
   shootInterval: 2
   moveSpeed: 20
   bulletLifetime: 5
   spreadAngle: 15
-  shootHeight: 1
+  bulletCount: 5
 --- !u!1 &405478019
 GameObject:
   m_ObjectHideFlags: 0

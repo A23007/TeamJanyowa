@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using System;
 
-public class SceneManager : MonoBehaviour
+public class MySceneManager : MonoBehaviour
 {
     [System.Serializable]
     public class SceneButton
@@ -53,5 +54,10 @@ public class SceneManager : MonoBehaviour
                 }
             });
         }
+    }
+
+    internal static void LoadScene(string v)
+    {
+        throw new NotImplementedException();
     }
 }

@@ -96,6 +96,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5177221678352758677, guid: 5758b38719747694b98e17c8f36e741e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 081638fe1dd976f4aae05a672acf3010, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -185,6 +189,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d37868f6c65614c4a8dd6980ae278301, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8655394750485747566, guid: d37868f6c65614c4a8dd6980ae278301, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: -7793699675898403836, guid: d37868f6c65614c4a8dd6980ae278301, type: 3}
       propertyPath: m_Range
@@ -341,6 +349,10 @@ PrefabInstance:
     - target: {fileID: -3875925489024643219, guid: d37868f6c65614c4a8dd6980ae278301, type: 3}
       propertyPath: m_TagString
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: -3666477873579086502, guid: d37868f6c65614c4a8dd6980ae278301, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: -3427377734388446065, guid: d37868f6c65614c4a8dd6980ae278301, type: 3}
       propertyPath: m_Range
@@ -961,7 +973,7 @@ MonoBehaviour:
   clickableButtons:
   - {fileID: 5174456170416684741}
   spawnPrefabs:
-  - {fileID: 5590707737520600969, guid: 74f9677d0b96262468fe38affa447974, type: 3}
+  - {fileID: 2532716581766113477, guid: 1f836d53acf762c4d8fdc9726ac5fde1, type: 3}
 --- !u!65 &8951738617871776986
 BoxCollider:
   m_ObjectHideFlags: 0

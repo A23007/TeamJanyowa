@@ -13,6 +13,7 @@ TagManager:
   - Ground
   - IceObject
   - fireAttack
+  - GoalObject
   layers:
   - Default
   - TransparentFX

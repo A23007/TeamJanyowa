@@ -67,7 +67,7 @@ PrefabInstance:
     - target: {fileID: -5616453157139578029, guid: 2ac709c9595029045ad1853546f9e8fc, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 10758, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 919132149155446097, guid: 2ac709c9595029045ad1853546f9e8fc, type: 3}
       propertyPath: m_Name
       value: IceStartStage_FBX_fix3

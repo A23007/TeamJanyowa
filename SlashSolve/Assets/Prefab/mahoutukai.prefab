@@ -147,7 +147,7 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 5da7d9fe566122c469fd6ea18d82a196, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 5c11f14283ec35944aacb80844c9083d, type: 2}
+      objectReference: {fileID: 9100000, guid: 65d1c7577f86bdc48abb8390525936a2, type: 2}
     - target: {fileID: 6526220122050227551, guid: 5da7d9fe566122c469fd6ea18d82a196, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.018
@@ -172,6 +172,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5da7d9fe566122c469fd6ea18d82a196, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7355754588997365379}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5da7d9fe566122c469fd6ea18d82a196, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1718542490041139135}
   m_SourcePrefab: {fileID: 100100000, guid: 5da7d9fe566122c469fd6ea18d82a196, type: 3}
 --- !u!1 &5404778702567434047 stripped
 GameObject:
@@ -261,3 +264,22 @@ MonoBehaviour:
   stopTime: 3
   detectRange: 5
   lostTargetWaitTime: 5
+  faceDirection: 2
+--- !u!114 &1718542490041139135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5404778702567434047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e51b8414356e0d34588483511410dfa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportInterval: 13
+  areaMin: {x: -10, y: -10}
+  areaMax: {x: 10, y: 10}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
