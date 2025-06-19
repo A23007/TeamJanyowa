@@ -40,6 +40,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5699331129583275073}
     m_Modifications:
+    - target: {fileID: 261786364637137290, guid: 67684a824f23e3242a86ed44f4b95460, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 314874471915208273, guid: 67684a824f23e3242a86ed44f4b95460, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -30.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206521322754254042, guid: 67684a824f23e3242a86ed44f4b95460, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -22.8
+      objectReference: {fileID: 0}
     - target: {fileID: 1342215177319852497, guid: 67684a824f23e3242a86ed44f4b95460, type: 3}
       propertyPath: m_Name
       value: Icesayuu_FBX_fix3
@@ -83,6 +95,34 @@ PrefabInstance:
     - target: {fileID: 1867675785175364459, guid: 67684a824f23e3242a86ed44f4b95460, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344748186147116113, guid: 67684a824f23e3242a86ed44f4b95460, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -22.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2902038433194002732, guid: 67684a824f23e3242a86ed44f4b95460, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 2902038433194002732, guid: 67684a824f23e3242a86ed44f4b95460, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -47.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3942329828882409803, guid: 67684a824f23e3242a86ed44f4b95460, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8554878352835624873, guid: 67684a824f23e3242a86ed44f4b95460, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -30.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652546965405445623, guid: 67684a824f23e3242a86ed44f4b95460, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652546965405445623, guid: 67684a824f23e3242a86ed44f4b95460, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -47.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
