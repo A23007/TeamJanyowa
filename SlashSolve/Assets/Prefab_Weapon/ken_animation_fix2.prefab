@@ -114,7 +114,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.66, z: 0}
-  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_LocalScale: {x: 15, y: 15, z: 15}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6705398466424990125}
@@ -159,8 +159,8 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: 0}
   useRotation: 0
   orbitAroundTarget: 0
-  orbitRadius: 3
-  orbitSpeed: 90
+  orbitRadius: 2
+  orbitSpeed: 180
 --- !u!1 &6871988774548426399
 GameObject:
   m_ObjectHideFlags: 0

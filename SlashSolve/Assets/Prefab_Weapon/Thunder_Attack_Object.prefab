@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thunderPrefab: {fileID: 1618211169006204896, guid: cb1d47b7b80400143a533da4ef5d7a1b, type: 3}
-  spawnInterval: 0.25
+  spawnInterval: 1
   hitProbability: 0.3
   spawnRange: {x: 5, y: 0, z: 5}
   targetTags:
