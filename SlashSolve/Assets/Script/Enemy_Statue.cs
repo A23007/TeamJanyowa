@@ -1,4 +1,4 @@
-//Enemyステータス　増田
+//敵のステータス及びダメージ処理　増田
 
 using UnityEngine;
 
@@ -11,6 +11,9 @@ public class EnemyStatus : MonoBehaviour
     // 倒れたときのエフェクト（Inspectorから設定）
     public GameObject deathEffect;
 
+    // ダメージを受けたときのエフェクト（Inspectorから設定）
+    public GameObject damageEffect;  // ← 追加
+
     void Start()
     {
         currentHP = maxHP;
@@ -20,6 +23,13 @@ public class EnemyStatus : MonoBehaviour
     {
         currentHP -= damage;
         Debug.Log($"敵が {damage} ダメージを受けた (残りHP: {currentHP})");
+
+        // ダメージエフェクトを生成
+        if (damageEffect != null)
+        {
+            GameObject effect = Instantiate(damageEffect, transform.position, Quaternion.identity);
+            effect.AddComponent<AutoDestroyEffect>();  // 自動削除スクリプトをアタッチ
+        }
 
         if (currentHP <= 0)
         {
@@ -32,12 +42,11 @@ public class EnemyStatus : MonoBehaviour
     {
         Debug.Log("敵が倒れた！");
 
-        // エフェクトを生成（位置と回転は現在のオブジェクトに合わせる）
+        // 死亡エフェクトを生成
         if (deathEffect != null)
         {
             GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
-            // エフェクトオブジェクトに自動削除スクリプトをアタッチ
-            AutoDestroyEffect autoDestroy = effect.AddComponent<AutoDestroyEffect>();
+            effect.AddComponent<AutoDestroyEffect>();
         }
 
         Destroy(gameObject);
@@ -48,7 +57,6 @@ public class EnemyStatus : MonoBehaviour
     {
         void Start()
         {
-            // ParticleSystemがある場合、その再生時間と最大ライフタイムに基づいて削除
             ParticleSystem ps = GetComponent<ParticleSystem>();
             if (ps != null)
             {
@@ -56,8 +64,7 @@ public class EnemyStatus : MonoBehaviour
             }
             else
             {
-                // ParticleSystemがない場合は安全のため5秒後に削除（適宜調整）
-                Destroy(gameObject, 5f);
+                Destroy(gameObject, 5f); // 保険として5秒後に削除
             }
         }
     }

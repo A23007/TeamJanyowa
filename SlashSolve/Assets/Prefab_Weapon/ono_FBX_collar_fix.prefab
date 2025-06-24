@@ -241,12 +241,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26850da6f4cb6a447be766b283b8fbd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 200
+  damage: 250
   breakObjectDamageMultiplier: 1
   enemyDamageMultiplier: 1
-  rockObjectDamageMultiplier: 1
-  scissorsObjectDamageMultiplier: 2
-  paperObjectDamageMultiplier: 0.5
+  rockObjectDamageMultiplier: 0.5
+  scissorsObjectDamageMultiplier: 1
+  paperObjectDamageMultiplier: 2
 --- !u!54 &7828895989002894418
 Rigidbody:
   m_ObjectHideFlags: 0

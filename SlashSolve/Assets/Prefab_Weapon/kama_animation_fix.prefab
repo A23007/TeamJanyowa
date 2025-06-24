@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26850da6f4cb6a447be766b283b8fbd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 200
+  damage: 150
   breakObjectDamageMultiplier: 1
   enemyDamageMultiplier: 1
   rockObjectDamageMultiplier: 0.5

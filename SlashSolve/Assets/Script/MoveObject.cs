@@ -2,19 +2,20 @@ using UnityEngine;
 
 public class MoveOnPlayerTouch : MonoBehaviour
 {
-    private bool hasMoved = false;
+    private bool isMoving = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!hasMoved && other.CompareTag("Player"))
+        if (!isMoving && other.CompareTag("Player"))
         {
-            hasMoved = true;
             StartCoroutine(MoveSequence());
         }
     }
 
     private System.Collections.IEnumerator MoveSequence()
     {
+        isMoving = true;
+
         Vector3 startPos = transform.position;
         Vector3 upPos = startPos + new Vector3(0, 5f, 0);
         Vector3 downPos = startPos;
@@ -27,6 +28,8 @@ public class MoveOnPlayerTouch : MonoBehaviour
 
         // â∫ç~Ç…1ïb
         yield return StartCoroutine(MoveOverTime(transform, downPos, 1f));
+
+        isMoving = false;
     }
 
     private System.Collections.IEnumerator MoveOverTime(Transform obj, Vector3 targetPos, float duration)
