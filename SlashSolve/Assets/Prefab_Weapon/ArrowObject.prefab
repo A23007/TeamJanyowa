@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 408734530095986418, guid: 9213a3005b2c744439be51cfbea39245, type: 3}
   shootOrigin: {fileID: 0}
-  shootInterval: 1.5
+  shootInterval: 1
   moveSpeed: 20
   bulletLifetime: 5
   spreadAngle: 30

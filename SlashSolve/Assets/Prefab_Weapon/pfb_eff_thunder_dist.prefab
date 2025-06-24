@@ -30131,9 +30131,9 @@ MonoBehaviour:
   damage: 1000
   breakObjectDamageMultiplier: 1
   enemyDamageMultiplier: 1
-  rockObjectDamageMultiplier: 2
-  scissorsObjectDamageMultiplier: 0.5
-  paperObjectDamageMultiplier: 1
+  rockObjectDamageMultiplier: 1
+  scissorsObjectDamageMultiplier: 2
+  paperObjectDamageMultiplier: 0.5
 --- !u!54 &864492122679023944
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -30250,7 +30250,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: -20933.734, z: 6.94e-43, w: 7.67e-43}
+  m_BoundingSphereOverride: {x: 0, y: 4.48e-43, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
